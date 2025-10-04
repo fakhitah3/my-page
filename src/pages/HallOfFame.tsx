@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trophy, Award, Star, Calendar, Medal } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 
 interface Achievement {
   id: string;
@@ -23,13 +24,16 @@ const HallOfFame = () => {
 
   const fetchAchievements = async () => {
     try {
-      const { data, error } = await supabase
-        .from('achievements')
-        .select('*')
-        .order('date_achieved', { ascending: false });
-
-      if (error) throw error;
-      setAchievements(data || []);
+      const achievementsQuery = query(
+        collection(db, 'achievements'),
+        orderBy('date_achieved', 'desc')
+      );
+      const querySnapshot = await getDocs(achievementsQuery);
+      const achievementsData = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as Achievement[];
+      setAchievements(achievementsData);
     } catch (error) {
       console.error('Error fetching achievements:', error);
     } finally {
