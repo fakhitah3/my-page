@@ -11,6 +11,7 @@ interface Achievement {
   category: string;
   date_achieved: string;
   image_url?: string;
+  caption?: string;
 }
 
 const HallOfFame = () => {
@@ -141,12 +142,17 @@ const HallOfFame = () => {
                     className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                   >
                     {achievement.image_url ? (
-                      <div className="h-48 overflow-hidden bg-gray-100">
+                      <div className="h-48 overflow-hidden bg-gray-100 relative">
                         <img
                           src={achievement.image_url}
                           alt={achievement.achievement_title}
                           className="w-full h-full object-cover"
                         />
+                        {achievement.caption && (
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-2">
+                            <p className="text-white text-sm font-medium">{achievement.caption}</p>
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <div className={`h-48 bg-gradient-to-br ${colorClass} flex items-center justify-center`}>
