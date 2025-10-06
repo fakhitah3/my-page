@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS achievements (
   description text NOT NULL,
   category text NOT NULL DEFAULT 'General',
   date_achieved date NOT NULL,
-  image_url text,
+  url text,
   created_at timestamptz DEFAULT now(),
   updated_at timestamptz DEFAULT now()
 );
