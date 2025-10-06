@@ -10,7 +10,7 @@ interface Achievement {
   description: string;
   category: string;
   date_achieved: string;
-  image_url?: string;
+  url?: string;
   caption?: string;
 }
 
