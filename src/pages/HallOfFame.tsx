@@ -141,7 +141,7 @@ const HallOfFame = () => {
                     key={achievement.id}
                     className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                   >
-                    {achievement.image_url ? (
+                    {achievement.url ? (
                       <div className="h-48 overflow-hidden bg-gray-100 relative">
                         <img
                           src={achievement.image_url}
