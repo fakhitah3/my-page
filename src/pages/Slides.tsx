@@ -1,48 +1,18 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, Tag, ExternalLink, FileText, X } from 'lucide-react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../lib/firebase';
-
-export interface Slide {
-  id: string;
-  title: string;
-  description: string;
-  date: string;
-  topics: string[];
-  link: string;
-  type: 'google-slides' | 'pdf' | 'powerpoint' | 'canva-embed';
-}
+import { slides, Slide } from '../data/slidesData';
 
 const Slides = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All');
-  const [slides, setSlides] = useState<Slide[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchSlides();
-  }, []);
-
-  const fetchSlides = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'slides'));
-      const slidesData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Slide[];
-      setSlides(slidesData);
-    } catch (error) {
-      console.error('Error fetching slides:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  // Get all unique topics
   const allTopics = useMemo(() => {
     const topics = slides.flatMap(slide => slide.topics);
     return ['All', ...Array.from(new Set(topics))];
-  }, [slides]);
+  }, []);
 
+  // Filter slides based on search term and selected topic
   const filteredSlides = useMemo(() => {
     return slides.filter(slide => {
       const matchesSearch = slide.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -53,7 +23,7 @@ const Slides = () => {
 
       return matchesSearch && matchesTopic;
     });
-  }, [searchTerm, selectedTopic, slides]);
+  }, [searchTerm, selectedTopic]);
 
   const getTypeIcon = (type: string) => {
     switch (type) {
@@ -84,18 +54,10 @@ const Slides = () => {
             Academic Presentations
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Browse through my collection of research presentations, conference talks, and educational materials
+            Browse through my collection of research presentations, conference talks, and educational materials 
             covering various topics in data science, machine learning, and renewable energy.
           </p>
         </div>
-
-        {loading ? (
-          <div className="text-center py-20">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-700 border-t-transparent"></div>
-            <p className="mt-4 text-gray-600">Loading slides...</p>
-          </div>
-        ) : (
-          <>
 
         {/* Subject/Module Cards */}
         <div className="mb-12">
@@ -267,8 +229,6 @@ const Slides = () => {
               Try adjusting your search terms or filter criteria
             </p>
           </div>
-        )}
-          </>
         )}
       </div>
     </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Trophy, Award, Star, Calendar, Medal } from 'lucide-react';
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { supabase } from '../lib/supabase';
 
 interface Achievement {
   id: string;
@@ -10,8 +9,7 @@ interface Achievement {
   description: string;
   category: string;
   date_achieved: string;
-  url?: string;
-  caption?: string;
+  image_url?: string;
 }
 
 const HallOfFame = () => {
@@ -25,16 +23,13 @@ const HallOfFame = () => {
 
   const fetchAchievements = async () => {
     try {
-      const achievementsQuery = query(
-        collection(db, 'achievements'),
-        orderBy('date_achieved', 'desc')
-      );
-      const querySnapshot = await getDocs(achievementsQuery);
-      const achievementsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Achievement[];
-      setAchievements(achievementsData);
+      const { data, error } = await supabase
+        .from('achievements')
+        .select('*')
+        .order('date_achieved', { ascending: false });
+
+      if (error) throw error;
+      setAchievements(data || []);
     } catch (error) {
       console.error('Error fetching achievements:', error);
     } finally {
@@ -141,18 +136,13 @@ const HallOfFame = () => {
                     key={achievement.id}
                     className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                   >
-                    {achievement.url ? (
-                      <div className="h-48 overflow-hidden bg-gray-100 relative">
+                    {achievement.image_url ? (
+                      <div className="h-48 overflow-hidden bg-gray-100">
                         <img
                           src={achievement.image_url}
                           alt={achievement.achievement_title}
                           className="w-full h-full object-cover"
                         />
-                        {achievement.caption && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-2">
-                            <p className="text-white text-sm font-medium">{achievement.caption}</p>
-                          </div>
-                        )}
                       </div>
                     ) : (
                       <div className={`h-48 bg-gradient-to-br ${colorClass} flex items-center justify-center`}>
