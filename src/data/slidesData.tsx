@@ -184,6 +184,16 @@ export const slides: Slide[] = [
   topics: ["Computer Evolution"],
   link: "https://www.canva.com/design/DAGPNcscP5A/m_HAZcwiqHttJhUXUCbPzA/view?embed",
   type: "canva-embed"
+},
+
+{
+  id: 30,
+  title: "Introduction to OOP",
+  description: "Introduction to Object-Oriented Programming covering fundamental concepts, principles, and practical applications of OOP paradigm.",
+  date: "2024-01-20",
+  topics: ["Object Oriented Programming"],
+  link: "https://www.canva.com/design/DAG0abXqhRA/T6U4u2zQPTTcOFHMLPXUtA/view?utm_content=DAG0abXqhRA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6698801bdf",
+  type: "google-slides"
 }
 
   ];
