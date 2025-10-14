@@ -194,6 +194,16 @@ export const slides: Slide[] = [
   topics: ["Object Oriented Programming"],
   link: "https://www.canva.com/design/DAG0abXqhRA/T6U4u2zQPTTcOFHMLPXUtA/view?utm_content=DAG0abXqhRA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6698801bdf",
   type: "google-slides"
+},
+
+{
+  id: 31,
+  title: "Object Oriented Programming Concepts",
+  description: "Core OOP concepts including classes, objects, inheritance, polymorphism, encapsulation, and abstraction with practical examples.",
+  date: "2024-01-20",
+  topics: ["Object Oriented Programming"],
+  link: "https://www.canva.com/design/DAG0ac8h7Pk/aKrdUqodDM5O7QfN0a5s5g/view",
+  type: "google-slides"
 }
 
   ];
