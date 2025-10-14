@@ -199,7 +199,7 @@ export const slides: Slide[] = [
 {
   id: 31,
   title: "Anatomy of a Class",
-  description: "Core OOP concepts including classes, objects, inheritance, polymorphism, encapsulation, and abstraction with practical examples.",
+  description: "Anatomy of a Class in OOP refers to the internal structure and components that define a class",
   date: "2024-01-20",
   topics: ["Object Oriented Programming"],
   link: "https://www.canva.com/design/DAG0ac8h7Pk/aKrdUqodDM5O7QfN0a5s5g/view",
