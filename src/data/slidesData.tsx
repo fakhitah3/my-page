@@ -198,7 +198,7 @@ export const slides: Slide[] = [
 
 {
   id: 31,
-  title: "Object Oriented Programming Concepts",
+  title: "Anatomy of a Class",
   description: "Core OOP concepts including classes, objects, inheritance, polymorphism, encapsulation, and abstraction with practical examples.",
   date: "2024-01-20",
   topics: ["Object Oriented Programming"],
