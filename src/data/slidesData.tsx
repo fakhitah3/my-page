@@ -204,6 +204,26 @@ export const slides: Slide[] = [
   topics: ["Object Oriented Programming"],
   link: "https://www.canva.com/design/DAG0ac8h7Pk/aKrdUqodDM5O7QfN0a5s5g/view",
   type: "google-slides"
+},
+
+{
+  id: 32,
+  title: "Control Structure - If Else",
+  description: "Conditional control structures using if-else statements for decision making and branching logic in object-oriented programming.",
+  date: "2024-01-20",
+  topics: ["Object Oriented Programming", "Control Structure"],
+  link: "https://www.canva.com/design/DAG0aWhBA2A/Dg4rU1LJZhQF-0Ba0XMeyA/view?embed",
+  type: "canva-embed"
+},
+
+{
+  id: 33,
+  title: "Control Structure - Loop",
+  description: "Loop control structures including for, while, and do-while loops for iterating and repeating code blocks in OOP.",
+  date: "2024-01-20",
+  topics: ["Object Oriented Programming", "Control Structure"],
+  link: "https://www.canva.com/design/DAG0aZFqF0A/qkOV-Cq1xYAWmh9rPkoZhw/view?embed",
+  type: "canva-embed"
 }
 
   ];
