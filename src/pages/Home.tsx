@@ -17,7 +17,7 @@ const Home = () => {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. She integrates academic inquiry with applied innovation to advance sustainable and intelligent systems.
+                Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. 
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
