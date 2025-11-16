@@ -6,54 +6,51 @@ const Home = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-<section className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-teal-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      {/* Text Content - Left */}
-      <div className="text-center lg:text-left">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Welcome to My
-          <span className="text-blue-700 block">Academic Hub</span>
-        </h1>
-        
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions.
-        </p>
+      <section className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Welcome to My
+                <span className="text-blue-700 block">Academic Hub</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. 
+              </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <Link 
-            to="/slides"
-            className="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl"
-          >
-            Explore My Slides
-            <ChevronRight size={20} className="ml-2" />
-          </Link>
-          
-          <Link 
-            to="/contact"
-            className="inline-flex items-center border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-700 hover:text-white transition-colors font-semibold text-lg"
-          >
-            Get in Touch
-          </Link>
+              {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <img 
+                  src="/Untitled design (4).png"
+                  alt="Fakhitah Ridzuan"
+                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+                />
+              </div>
+            </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link 
+                  to="/slides"
+                  className="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl"
+                >
+                  Explore My Slides
+                  <ChevronRight size={20} className="ml-2" />
+                </Link>
+                
+                <Link 
+                  to="/contact"
+                  className="inline-flex items-center border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-700 hover:text-white transition-colors font-semibold text-lg"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Profile Image - Right */}
-      <div className="flex justify-center lg:justify-end">
-        <div className="relative">
-          <img 
-            src="/Untitled design (4).png"
-            alt="Fakhitah Ridzuan"
-            className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
-          />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Brief Bio Section */}
       <section className="py-20 bg-white">
