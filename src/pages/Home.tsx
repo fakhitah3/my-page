@@ -20,6 +20,17 @@ const Home = () => {
                 Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. 
               </p>
 
+              {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <img 
+                  src="/Untitled design (4).png"
+                  alt="Fakhitah Ridzuan"
+                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+                />
+              </div>
+            </div>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link 
                   to="/slides"
@@ -35,17 +46,6 @@ const Home = () => {
                 >
                   Get in Touch
                 </Link>
-              </div>
-            </div>
-
-            {/* Profile Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <img 
-                  src="/Untitled design (4).png"
-                  alt="Fakhitah Ridzuan"
-                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
-                />
               </div>
             </div>
           </div>
