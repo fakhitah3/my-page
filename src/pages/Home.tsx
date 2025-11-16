@@ -5,55 +5,55 @@ import { ChevronRight, BookOpen, Users, Award } from 'lucide-react';
 const Home = () => {
   return (
     <div className="pt-16">
-{/* Hero Section */}
-<section className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-teal-50">
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-{/* Profile Image */}
-<div className="flex justify-center lg:justify-start">
-<img
-src="/Untitled design (4).png"
-alt="Fakhitah Ridzuan"
-className="w-full h-auto object-cover"
-/>
-</div>
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Welcome to My
+                <span className="text-blue-700 block">Academic Hub</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. She integrates academic inquiry with applied innovation to advance sustainable and intelligent systems.
+              </p>
 
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link 
+                  to="/slides"
+                  className="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl"
+                >
+                  Explore My Slides
+                  <ChevronRight size={20} className="ml-2" />
+                </Link>
+                
+                <Link 
+                  to="/contact"
+                  className="inline-flex items-center border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-700 hover:text-white transition-colors font-semibold text-lg"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
 
-{/* Text Content */}
-<div className="lg:col-span-2 text-center lg:text-left">
-<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-Welcome to My
-<span className="text-blue-700 block">Academic Hub</span>
-</h1>
-
-
-<p className="text-xl text-gray-600 mb-8 leading-relaxed">
-Fakhitah Ridzuan is an educator and researcher who works across data science and emerging technologies. Her work bridges academic practice with applied innovation in sustainable and intelligent systems.
-</p>
-
-
-<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-<Link
-to="/slides"
-className="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl"
->
-Explore My Slides
-<ChevronRight size={20} className="ml-2" />
-</Link>
-<Link
-to="/contact"
-className="inline-flex items-center border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-700 hover:text-white transition-colors font-semibold text-lg"
->
-Get in Touch
-</Link>
-</div>
-</div>
-
-
-</div>
-</div>
-</section>
-
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <img 
+                  src="/Untitled design (4).png"
+                  alt="Fakhitah Ridzuan"
+                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+                />
+                <div className="absolute -bottom-2 -right-2 bg-teal-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="text-xl">🎓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brief Bio Section */}
       <section className="py-20 bg-white">
