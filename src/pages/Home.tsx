@@ -46,9 +46,6 @@ const Home = () => {
                   alt="Fakhitah Ridzuan"
                   className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-teal-600 text-white p-3 rounded-full shadow-lg">
-                  <div className="text-xl">🎓</div>
-                </div>
               </div>
             </div>
           </div>
