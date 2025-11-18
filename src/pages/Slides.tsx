@@ -55,7 +55,7 @@ const Slides = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Browse through my collection of research presentations, conference talks, and educational materials 
-            covering various topics in data science, machine learning, and renewable energy.
+            covering various topics in data science, machine learning.
           </p>
         </div>
 
