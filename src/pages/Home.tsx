@@ -61,7 +61,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Passionate researcher and educator dedicated to advancing knowledge in data science, 
-              machine learning, and renewable energy systems.
+              machine learning.
             </p>
           </div>
 
