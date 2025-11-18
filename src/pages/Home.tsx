@@ -17,20 +17,10 @@ const Home = () => {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Fakhitah Ridzuan is an educator and researcher whose work spans data science, emerging technologies, and the design of application-based solutions. 
+                Explore my collection of academic presentations, research insights, and 
+                professional slides covering data science, machine learning, and renewable energy.
               </p>
 
-              {/* Profile Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <img 
-                  src="/Untitled design (4).png"
-                  alt="Fakhitah Ridzuan"
-                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
-                />
-              </div>
-            </div>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link 
                   to="/slides"
@@ -46,6 +36,20 @@ const Home = () => {
                 >
                   Get in Touch
                 </Link>
+              </div>
+            </div>
+
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <img 
+                  src="/Untitled design (4).png"
+                  alt="Fakhitah Ridzuan"
+                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+                />
+                <div className="absolute -bottom-2 -right-2 bg-teal-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="text-xl">🎓</div>
+                </div>
               </div>
             </div>
           </div>
