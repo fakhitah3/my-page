@@ -57,18 +57,6 @@ const EntrepreneurialActivity = () => {
           <p className="text-lg text-gray-600 max-w-2xl">
             Building technology ventures at the intersection of sustainability, data science, and artificial intelligence.
           </p>
-          <div className="grid grid-cols-3 gap-4 mt-10 max-w-sm">
-            {[
-              { value: '3', label: 'Startups' },
-              { value: '3', label: 'SDGs Targeted' },
-              { value: 'AI', label: 'Powered' },
-            ].map((stat, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ADD8E6' }}>
-                <p className="text-2xl font-bold" style={{ color: '#000080' }}>{stat.value}</p>
-                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
