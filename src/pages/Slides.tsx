@@ -55,10 +55,6 @@ const Slides = () => {
         </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
-              <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF9CE9' }}>Filter by Subject</span>
-            </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Browse by Course</h2>
           </div>
 
