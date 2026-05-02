@@ -8,6 +8,7 @@ import EntrepreneurialActivity from './pages/EntrepreneurialActivity';
 import HallOfFame from './pages/HallOfFame';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Research from './pages/Research';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/research" element={<Research />} />
             <Route path="/slides" element={<Slides />} />
             <Route path="/entrepreneurial" element={<EntrepreneurialActivity />} />
             <Route path="/hall-of-fame" element={<HallOfFame />} />
