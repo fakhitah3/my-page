@@ -94,10 +94,6 @@ const Home = () => {
                 Welcome to My
                 <span className="block" style={{ color: '#AD56C4' }}>Academic Hub</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Explore my collection of academic presentations, research insights, and
-                professional slides covering data science, machine learning, and application development.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   to="/slides"
