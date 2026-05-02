@@ -110,22 +110,6 @@ const Home = () => {
                 solutions — bridging rigorous research with real-world impact.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-                {[
-                  { icon: BookOpen, label: 'Research Focus', desc: 'AI, Data Quality, IoT Sustainability' },
-                  { icon: Users,    label: 'Teaching',       desc: 'Data Science, OOP, App Development' },
-                  { icon: Award,    label: 'Recognition',    desc: 'Royal Scholarship Recipient 2017' },
-                ].map(({ icon: Icon, label, desc }) => (
-                  <div key={label} className="rounded-xl p-4" style={{ background: '#ADD8E626', border: '1px solid #ADD8E6' }}>
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-2" style={{ background: '#000080' }}>
-                      <Icon size={18} className="text-white" />
-                    </div>
-                    <p className="font-semibold text-gray-900 text-sm">{label}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">{desc}</p>
-                  </div>
-                ))}
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/slides"
