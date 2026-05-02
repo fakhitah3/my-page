@@ -102,7 +102,7 @@ const fypStudents = [
   { year: 2025, name: 'Sharvin Kumar A/L Arumugam', title: 'Resume Screening System Using Natural Language Processing', status: 'Completed' },
   { year: 2025, name: 'Nik Nur Syarwani Binti Che Mat Yeh', title: 'Food Donation Apps', status: 'Completed' },
   { year: 2025, name: 'Hakimah Mat Harun', title: 'Counselling Reservation System for Universiti Malaysia Kelantan', status: 'Completed' },
-  { year: 2025, name: 'Nur Fathi Auni Binti Azlan', title: 'Sentiment Analysis in Music', status: 'On-going' },
+  { year: 2025, name: 'Nur Fathi Auni Binti Azlan', title: 'Sentiment Analysis in Music', status: 'Completed' },
   { year: 2025, name: 'Pavethren A/L Batmanathen', title: 'Data Science for Violence Against Women and Children', status: 'Completed' },
   { year: 2025, name: 'Athirah Binti Abdul Wahhab', title: 'Data Analytics and Food Price Prediction in Malaysia', status: 'Completed' },
   { year: 2025, name: 'Muhamad Danish Saiful Rizal', title: 'Automated Detection and Classification of Water Quality Anomalies Using Machine Learning', status: 'Completed' },
