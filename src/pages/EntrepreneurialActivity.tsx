@@ -1,129 +1,194 @@
 import React from 'react';
-import { Leaf, Eye, Recycle, Lightbulb } from 'lucide-react';
+import { Droplets, BarChart3, Leaf, CheckCircle } from 'lucide-react';
+
+const projects = [
+  {
+    id: 1,
+    name: 'EcoWatch',
+    tagline: 'Smart Data, Healthier Shrimp',
+    icon: Droplets,
+    description:
+      'EcoWatch is a sustainability-driven startup that helps aquaculture farmers and environmental agencies track, monitor, and improve water quality using an intelligent data-analytics platform. Our EcoBot solution empowers users to make data-driven decisions that accelerate progress toward SDG 6 (Clean Water) and SDG 14 (Life Below Water) goals. By replacing manual sampling with real-time AI insights, we ensure healthier aquatic ecosystems and maximized farming yields.',
+    sdgs: ['SDG 6 – Clean Water', 'SDG 14 – Life Below Water'],
+    accent: '#000080',
+    light: '#ADD8E620',
+    border: '#ADD8E6',
+  },
+  {
+    id: 2,
+    name: 'Carbonlens',
+    tagline: 'Making Sustainability as Easy as Tracking Your Steps',
+    icon: BarChart3,
+    description:
+      'Carbonlens is a web-based platform that provides an intelligent idea of technology and AI to ensure that ESG reporting becomes quicker, more precise, and significant. Compared to the conventional manual system, which is time-consuming and can easily cause errors, Carbonlens offers a single platform to run Scope 1, 2 and 3 emissions with ease.',
+    highlights: ['Scope 1, 2 & 3 emissions tracking', 'AI-powered ESG reporting', 'Faster and more accurate than manual systems'],
+    accent: '#6D8196',
+    light: '#6D819615',
+    border: '#6D819660',
+  },
+  {
+    id: 3,
+    name: 'Wasteless',
+    tagline: 'Trim the Waste, Feed the World',
+    icon: Leaf,
+    description: null,
+    benefits: [
+      { title: 'Reducing Food Waste',       desc: 'Helps decrease the amount of food waste ending up in landfills.' },
+      { title: 'Economic Savings',           desc: 'Offers significant savings for consumers and revenue recovery for sellers.' },
+      { title: 'Supporting Sustainability',  desc: 'Promotes sustainable consumption practices and environmental protection.' },
+    ],
+    accent: '#000080',
+    light: '#ADD8E615',
+    border: '#ADD8E6',
+  },
+];
 
 const EntrepreneurialActivity = () => {
-  const projects = [
-    {
-      id: 1,
-      name: 'Ecowatch',
-      icon: Eye,
-      description: 'Environmental monitoring system that tracks and analyzes ecological changes in real-time using IoT sensors and data analytics.',
-      bg: '#ADD8E620',
-      iconBg: '#000080',
-      iconColor: '#ADD8E6',
-      accentColor: '#000080',
-      borderColor: '#ADD8E6',
-      features: ['Real-time environmental data collection', 'Air quality monitoring', 'Climate pattern analysis', 'Automated reporting system'],
-    },
-    {
-      id: 2,
-      name: 'Carbonlens',
-      icon: Leaf,
-      description: 'Carbon footprint tracking and analysis platform helping organizations measure, monitor, and reduce their environmental impact.',
-      bg: '#6D819610',
-      iconBg: '#6D8196',
-      iconColor: 'white',
-      accentColor: '#6D8196',
-      borderColor: '#6D819660',
-      features: ['Carbon emissions calculation', 'Sustainability metrics dashboard', 'Reduction recommendations', 'Compliance reporting'],
-    },
-    {
-      id: 3,
-      name: 'Wasteless',
-      icon: Recycle,
-      description: 'Smart waste management solution that optimizes recycling processes and promotes sustainable waste disposal practices.',
-      bg: '#ADD8E615',
-      iconBg: '#000080',
-      iconColor: '#ADD8E6',
-      accentColor: '#000080',
-      borderColor: '#ADD8E6',
-      features: ['Waste classification system', 'Recycling route optimization', 'Educational resources', 'Community engagement tools'],
-    },
-  ];
-
-  const otherInitiatives = [
-    { title: 'Student Innovation Lab', description: 'A collaborative space where students develop and test entrepreneurial ideas with mentorship and resources.' },
-    { title: 'Sustainability Workshops', description: 'Regular workshops teaching students about sustainable business practices and green technology.' },
-    { title: 'Industry Partnerships', description: 'Collaborations with leading companies to provide real-world experience and networking opportunities.' },
-  ];
-
   return (
     <div className="pt-16">
+      {/* Hero */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #FFFAFA 0%, #ADD8E620 60%, #6D819610 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Innovation</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Entrepreneurial Activity</h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            Fostering innovation and sustainability through student-led projects and initiatives
+          <p className="text-lg text-gray-600 max-w-2xl">
+            Building technology ventures at the intersection of sustainability, data science, and artificial intelligence.
           </p>
+          <div className="grid grid-cols-3 gap-4 mt-10 max-w-sm">
+            {[
+              { value: '3', label: 'Startups' },
+              { value: '3', label: 'SDGs Targeted' },
+              { value: 'AI', label: 'Powered' },
+            ].map((stat, i) => (
+              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ADD8E6' }}>
+                <p className="text-2xl font-bold" style={{ color: '#000080' }}>{stat.value}</p>
+                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Projects */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Featured Projects</h2>
-          <div className="space-y-12">
-            {projects.map((project, index) => (
-              <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="rounded-2xl p-8 h-full" style={{ background: project.bg, border: `1px solid ${project.borderColor}` }}>
-                    <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 shadow-lg" style={{ background: project.iconBg }}>
-                      <project.icon size={32} style={{ color: project.iconColor }} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{project.name}</h3>
-                    <p className="text-gray-700 text-lg mb-6">{project.description}</p>
-                    <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="mr-2 mt-1" style={{ color: project.accentColor }}>•</span>
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`grid grid-cols-1 lg:grid-cols-5 gap-10 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+            >
+              {/* Visual panel */}
+              <div className={`lg:col-span-2 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div
+                  className="rounded-2xl p-10 flex flex-col items-center justify-center text-center aspect-square"
+                  style={{ background: project.light, border: `1px solid ${project.border}` }}
+                >
+                  <div
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg"
+                    style={{ background: project.accent }}
+                  >
+                    <project.icon size={40} className="text-white" />
                   </div>
-                </div>
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="rounded-2xl aspect-video flex items-center justify-center" style={{ background: project.bg, border: `2px solid ${project.borderColor}` }}>
-                    <project.icon size={120} strokeWidth={1} style={{ color: project.accentColor, opacity: 0.4 }} />
-                  </div>
+                  <span
+                    className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
+                    style={{ background: `${project.accent}20`, color: project.accent }}
+                  >
+                    Venture {String(project.id).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900">{project.name}</h3>
+                  <p className="text-sm mt-2 leading-snug italic" style={{ color: '#6D8196' }}>"{project.tagline}"</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <section className="py-20" style={{ background: '#FFFAFA' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{ background: '#000080' }}>
-              <Lightbulb className="text-white" size={32} />
+              {/* Content panel */}
+              <div className={`lg:col-span-3 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-1 w-8 rounded" style={{ background: '#ADD8E6' }} />
+                  <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>
+                    {project.tagline}
+                  </span>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-5">{project.name}</h2>
+
+                {project.description && (
+                  <p className="text-gray-600 leading-relaxed mb-6">{project.description}</p>
+                )}
+
+                {/* SDG badges */}
+                {'sdgs' in project && project.sdgs && (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.sdgs.map(sdg => (
+                      <span
+                        key={sdg}
+                        className="text-sm font-semibold px-4 py-1.5 rounded-full"
+                        style={{ background: '#ADD8E640', color: '#000080' }}
+                      >
+                        {sdg}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Highlights list */}
+                {'highlights' in project && project.highlights && (
+                  <ul className="space-y-3 mb-6">
+                    {project.highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle size={18} className="flex-shrink-0 mt-0.5" style={{ color: '#6D8196' }} />
+                        <span className="text-gray-700">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Key Benefits */}
+                {'benefits' in project && project.benefits && (
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-gray-900">Key Benefits</h4>
+                    {project.benefits.map((b, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-4 p-4 rounded-xl"
+                        style={{ background: project.light, border: `1px solid ${project.border}` }}
+                      >
+                        <div
+                          className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white mt-0.5"
+                          style={{ background: project.accent }}
+                        >
+                          {i + 1}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">{b.title}</p>
+                          <p className="text-sm text-gray-600 mt-0.5">{b.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Other Initiatives</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Supporting entrepreneurial growth through various programs and partnerships</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherInitiatives.map((initiative, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow" style={{ border: '1px solid #ADD8E6' }}>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{initiative.title}</h3>
-                <p className="text-gray-600">{initiative.description}</p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 text-white" style={{ background: '#000080' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Join Our Entrepreneurial Community</h2>
-          <p className="text-xl" style={{ color: '#ADD8E6' }}>
-            Interested in participating or learning more about our entrepreneurial initiatives?
-            Connect with us to explore opportunities.
+      {/* CTA */}
+      <section className="py-16 text-white text-center" style={{ background: '#000080' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-4">Interested in Collaborating?</h2>
+          <p className="text-lg mb-8" style={{ color: '#ADD8E6' }}>
+            These ventures are open to partnerships, investment discussions, and academic collaborations.
+            Reach out to explore how we can work together.
           </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 font-semibold px-8 py-3 rounded-lg transition-opacity hover:opacity-90"
+            style={{ background: '#ADD8E6', color: '#000080' }}
+          >
+            Get in Touch
+          </a>
         </div>
       </section>
     </div>

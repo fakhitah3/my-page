@@ -152,7 +152,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute inset-0 rounded-full translate-x-3 translate-y-3" style={{ background: '#ADD8E6', zIndex: 0 }} />
                 <img
-                  src="/Untitled design (4).png"
+                  src="/profile-photo.png"
                   alt="Fakhitah Ridzuan"
                   className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
                   style={{ zIndex: 1 }}
