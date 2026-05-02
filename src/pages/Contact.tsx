@@ -3,28 +3,28 @@ import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="pt-16 min-h-screen bg-gray-50">
+    <div className="pt-16 min-h-screen" style={{ background: '#fff0fc' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Get in Touch
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Reach Out</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I welcome collaboration opportunities, speaking engagements, and discussions about research. 
+            I welcome collaboration opportunities, speaking engagements, and discussions about research.
             Feel free to reach out through any of the channels below.
           </p>
         </div>
 
-        {/* Main Content */}
         <div className="max-w-4xl mx-auto">
-          {/* Contact Information */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
-
             <div className="space-y-6 mb-12">
-              <div className="flex items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Mail className="text-blue-700" size={24} />
+              <div className="flex items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ border: '1px solid #ffd6f8' }}>
+                <div className="p-3 rounded-full mr-4" style={{ background: '#fff0f3' }}>
+                  <Mail style={{ color: '#FF8DA1' }} size={24} />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
@@ -32,9 +32,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-teal-100 p-3 rounded-full mr-4">
-                  <Phone className="text-teal-600" size={24} />
+              <div className="flex items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ border: '1px solid #ffd6f8' }}>
+                <div className="p-3 rounded-full mr-4" style={{ background: '#fff0fc' }}>
+                  <Phone style={{ color: '#FF9CE9' }} size={24} />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Office Phone</p>
@@ -42,9 +42,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-indigo-100 p-3 rounded-full mr-4 mt-1">
-                  <MapPin className="text-indigo-600" size={24} />
+              <div className="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ border: '1px solid #ffd6f8' }}>
+                <div className="p-3 rounded-full mr-4 mt-1" style={{ background: '#f7eefb' }}>
+                  <MapPin style={{ color: '#AD56C4' }} size={24} />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Office Location</p>
@@ -57,7 +57,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Professional Links */}
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">Professional Networks</h3>
               <div className="flex flex-wrap gap-4">
@@ -65,7 +64,8 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/fakhitahridzuan/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex items-center text-white px-4 py-3 rounded-lg transition-opacity hover:opacity-90"
+                  style={{ background: '#AD56C4' }}
                 >
                   <Linkedin size={20} className="mr-2" />
                   LinkedIn
@@ -82,10 +82,9 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Response Time Notice */}
-            <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-              <p className="text-sm text-blue-800">
-                <strong>Response Time:</strong> I typically respond to emails within 24-48 hours during business days. 
+            <div className="mt-6 p-4 rounded-lg" style={{ background: '#fff0f3', border: '1px solid #ffd6dd' }}>
+              <p className="text-sm" style={{ color: '#8b3ea3' }}>
+                <strong>Response Time:</strong> I typically respond to emails within 24–48 hours during business days.
                 For urgent matters, please call my office phone.
               </p>
             </div>

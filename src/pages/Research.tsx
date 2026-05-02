@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DollarSign, Copyright, FlaskConical, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
+import { Copyright, FlaskConical, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const leaderGrants = [
   {
@@ -121,9 +121,13 @@ const fypYears = [...new Set(fypStudents.map(s => s.year))].sort();
 const StatusBadge = ({ status }: { status: string }) => {
   const ongoing = status.toLowerCase().includes('on-going') || status.toLowerCase() === 'ongoing';
   return (
-    <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap ${
-      ongoing ? 'bg-teal-100 text-teal-700' : 'bg-gray-100 text-gray-500'
-    }`}>
+    <span
+      className="text-xs font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+      style={ongoing
+        ? { background: '#fff0fc', color: '#AD56C4' }
+        : { background: '#f3f4f6', color: '#6b7280' }
+      }
+    >
       {ongoing ? 'On-going' : 'Completed'}
     </span>
   );
@@ -133,12 +137,12 @@ const GrantCard = ({ grant, index }: { grant: typeof leaderGrants[0]; index: num
   <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
     <div className="flex items-start justify-between gap-4">
       <div className="flex items-start gap-4 flex-1 min-w-0">
-        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm flex items-center justify-center">
+        <span className="flex-shrink-0 w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center" style={{ background: '#e8ccf3', color: '#AD56C4' }}>
           {index + 1}
         </span>
         <div className="min-w-0">
           <p className="font-semibold text-gray-900 leading-snug">{grant.title}</p>
-          {grant.funder && <p className="text-sm text-blue-700 mt-1 font-medium">{grant.funder}</p>}
+          {grant.funder && <p className="text-sm mt-1 font-medium" style={{ color: '#AD56C4' }}>{grant.funder}</p>}
           <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
             {grant.amount && <span className="font-semibold text-gray-700">{grant.amount}</span>}
             {grant.period && <span>{grant.period}</span>}
@@ -150,11 +154,11 @@ const GrantCard = ({ grant, index }: { grant: typeof leaderGrants[0]; index: num
   </div>
 );
 
-const SectionHeader = ({ accent, label, title }: { accent: string; label: string; title: string }) => (
+const SectionHeader = ({ label, title }: { label: string; title: string }) => (
   <div className="mb-10">
     <div className="flex items-center gap-3 mb-3">
-      <div className={`h-1 w-10 rounded ${accent}`} />
-      <span className={`text-sm font-semibold tracking-widest uppercase ${accent.replace('bg-', 'text-')}`}>{label}</span>
+      <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+      <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>{label}</span>
     </div>
     <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{title}</h2>
   </div>
@@ -172,11 +176,11 @@ const Research = () => {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-20">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #fff0f3 0%, #fff0fc 50%, #f7eefb 100%)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-1 w-10 bg-blue-700 rounded" />
-            <span className="text-sm font-semibold tracking-widest text-blue-700 uppercase">Research Portfolio</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Research Portfolio</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Research</h1>
           <p className="text-lg text-gray-600 max-w-2xl">
@@ -191,8 +195,8 @@ const Research = () => {
               { value: copyrights.length + patents.length, label: 'IP Registered' },
               { value: phdStudents.length + drDphStudents.length, label: 'PhD Supervisees' },
             ].map((stat, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center border border-gray-100">
-                <p className="text-2xl font-bold text-blue-700">{stat.value}</p>
+              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ffd6dd' }}>
+                <p className="text-2xl font-bold" style={{ color: '#AD56C4' }}>{stat.value}</p>
                 <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
               </div>
             ))}
@@ -203,11 +207,11 @@ const Research = () => {
       {/* Grants */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader accent="bg-blue-700" label="Funding" title="Research Grants" />
+          <SectionHeader label="Funding" title="Research Grants" />
 
           <div className="mb-10">
             <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-700 inline-block" />
+              <span className="w-2 h-2 rounded-full inline-block" style={{ background: '#AD56C4' }} />
               Project Leader
             </h3>
             <div className="space-y-4">
@@ -217,7 +221,7 @@ const Research = () => {
 
           <div>
             <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-600 inline-block" />
+              <span className="w-2 h-2 rounded-full inline-block" style={{ background: '#FF9CE9' }} />
               Project Member
             </h3>
             <div className="space-y-4">
@@ -228,21 +232,20 @@ const Research = () => {
       </section>
 
       {/* Copyright & Patent */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20" style={{ background: '#fff7f6' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader accent="bg-amber-500" label="Intellectual Property" title="Copyright & Patent" />
+          <SectionHeader label="Intellectual Property" title="Copyright & Patent" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Copyright */}
             <div>
               <div className="flex items-center gap-2 mb-5">
-                <Copyright size={20} className="text-amber-600" />
+                <Copyright size={20} style={{ color: '#FF8DA1' }} />
                 <h3 className="text-lg font-bold text-gray-800">Copyright</h3>
               </div>
               <div className="space-y-3">
                 {copyrights.map((c, i) => (
-                  <div key={i} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-xs font-mono font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">
+                  <div key={i} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow" style={{ border: '1px solid #ffd6dd' }}>
+                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded" style={{ color: '#FF8DA1', background: '#fff0f3' }}>
                       {c.ref}
                     </span>
                     <p className="text-gray-800 font-medium mt-2 text-sm leading-snug">{c.title}</p>
@@ -251,16 +254,15 @@ const Research = () => {
               </div>
             </div>
 
-            {/* Patent */}
             <div>
               <div className="flex items-center gap-2 mb-5">
-                <FlaskConical size={20} className="text-blue-700" />
+                <FlaskConical size={20} style={{ color: '#AD56C4' }} />
                 <h3 className="text-lg font-bold text-gray-800">Patent</h3>
               </div>
               <div className="space-y-3">
                 {patents.map((p, i) => (
-                  <div key={i} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-xs font-mono font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
+                  <div key={i} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow" style={{ border: '1px solid #e8ccf3' }}>
+                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded" style={{ color: '#AD56C4', background: '#f7eefb' }}>
                       {p.ref}
                     </span>
                     <p className="text-gray-800 font-medium mt-2 text-sm leading-snug">{p.title}</p>
@@ -275,18 +277,18 @@ const Research = () => {
       {/* Supervision */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader accent="bg-teal-600" label="Mentorship" title="Student Supervision" />
+          <SectionHeader label="Mentorship" title="Student Supervision" />
 
           {/* PhD */}
           <div className="mb-12">
             <div className="flex items-center gap-2 mb-5">
-              <GraduationCap size={20} className="text-teal-600" />
+              <GraduationCap size={20} style={{ color: '#FF9CE9' }} />
               <h3 className="text-lg font-bold text-gray-800">Doctor of Philosophy <span className="text-gray-400 font-normal">(Co-Supervisor)</span></h3>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            <div className="overflow-hidden rounded-2xl shadow-sm" style={{ border: '1px solid #ffd6f8' }}>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-teal-600 text-white">
+                  <tr className="text-white" style={{ background: '#AD56C4' }}>
                     <th className="px-5 py-3 text-left font-semibold w-8">#</th>
                     <th className="px-5 py-3 text-left font-semibold">Student</th>
                     <th className="px-5 py-3 text-left font-semibold hidden md:table-cell">Thesis Title</th>
@@ -295,7 +297,7 @@ const Research = () => {
                 </thead>
                 <tbody>
                   {phdStudents.map((s, i) => (
-                    <tr key={i} className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-teal-50 transition-colors`}>
+                    <tr key={i} className="border-t transition-colors" style={{ borderColor: '#ffd6f8', background: i % 2 === 0 ? 'white' : '#fff0fc' }}>
                       <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
                       <td className="px-5 py-4 font-semibold text-gray-900">{s.name}
                         {s.title && <p className="text-gray-500 font-normal mt-0.5 md:hidden">{s.title}</p>}
@@ -312,13 +314,13 @@ const Research = () => {
           {/* DrDPH */}
           <div className="mb-12">
             <div className="flex items-center gap-2 mb-5">
-              <GraduationCap size={20} className="text-blue-700" />
+              <GraduationCap size={20} style={{ color: '#FF8DA1' }} />
               <h3 className="text-lg font-bold text-gray-800">Doctorate in Dental Public Health <span className="text-gray-400 font-normal">(DrDPH)</span></h3>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            <div className="overflow-hidden rounded-2xl shadow-sm" style={{ border: '1px solid #ffd6dd' }}>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-blue-700 text-white">
+                  <tr className="text-white" style={{ background: '#FF8DA1' }}>
                     <th className="px-5 py-3 text-left font-semibold w-8">#</th>
                     <th className="px-5 py-3 text-left font-semibold">Student</th>
                     <th className="px-5 py-3 text-left font-semibold">Status</th>
@@ -326,7 +328,7 @@ const Research = () => {
                 </thead>
                 <tbody>
                   {drDphStudents.map((s, i) => (
-                    <tr key={i} className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50 transition-colors`}>
+                    <tr key={i} className="border-t transition-colors" style={{ borderColor: '#ffd6dd', background: i % 2 === 0 ? 'white' : '#fff0f3' }}>
                       <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
                       <td className="px-5 py-4 font-semibold text-gray-900">{s.name}</td>
                       <td className="px-5 py-4"><StatusBadge status={s.status} /></td>
@@ -348,21 +350,22 @@ const Research = () => {
                 const students = fypStudents.filter(s => s.year === year);
                 const isOpen = fypOpen[year] !== false;
                 return (
-                  <div key={year} className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <div key={year} className="overflow-hidden rounded-2xl shadow-sm" style={{ border: '1px solid #e8ccf3' }}>
                     <button
                       onClick={() => toggleYear(year)}
-                      className="w-full flex items-center justify-between px-6 py-4 bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+                      className="w-full flex items-center justify-between px-6 py-4 text-white hover:opacity-90 transition-opacity"
+                      style={{ background: '#8b3ea3' }}
                     >
                       <span className="font-semibold text-base">Cohort {year}</span>
                       <div className="flex items-center gap-3">
-                        <span className="text-sm text-gray-300">{students.length} student{students.length > 1 ? 's' : ''}</span>
+                        <span className="text-sm opacity-80">{students.length} student{students.length > 1 ? 's' : ''}</span>
                         {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                       </div>
                     </button>
                     {isOpen && (
                       <table className="w-full text-sm">
                         <thead>
-                          <tr className="bg-gray-100 text-gray-600">
+                          <tr className="text-gray-600" style={{ background: '#f7eefb' }}>
                             <th className="px-5 py-3 text-left font-semibold w-8">#</th>
                             <th className="px-5 py-3 text-left font-semibold">Student</th>
                             <th className="px-5 py-3 text-left font-semibold hidden md:table-cell">Project Title</th>
@@ -371,7 +374,7 @@ const Research = () => {
                         </thead>
                         <tbody>
                           {students.map((s, i) => (
-                            <tr key={i} className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100 transition-colors`}>
+                            <tr key={i} className="border-t transition-colors" style={{ borderColor: '#e8ccf3', background: i % 2 === 0 ? 'white' : '#fff0fc' }}>
                               <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
                               <td className="px-5 py-4 font-semibold text-gray-900">
                                 {s.name}

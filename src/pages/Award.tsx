@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Medal, Star, Award as AwardIcon } from 'lucide-react';
+import { Trophy, Medal, Star } from 'lucide-react';
 
 const awards = [
   {
@@ -116,34 +116,38 @@ const awards = [
   },
 ];
 
-const tierConfig = {
+const tierConfig: Record<string, { gradient: string; badgeBg: string; badgeColor: string; icon: React.ReactNode; cardBorder: string; cardBg: string }> = {
   gold: {
-    bg: 'bg-amber-50',
-    border: 'border-amber-200',
-    badge: 'bg-amber-100 text-amber-700',
-    icon: <Medal size={20} className="text-amber-500" />,
-    dot: 'bg-amber-400',
+    gradient: 'linear-gradient(135deg, #FF8DA1, #FFC2BA)',
+    badgeBg: '#fff0f3',
+    badgeColor: '#FF8DA1',
+    icon: <Medal size={20} style={{ color: '#FF8DA1' }} />,
+    cardBorder: '#ffd6dd',
+    cardBg: '#fff0f3',
   },
   silver: {
-    bg: 'bg-slate-50',
-    border: 'border-slate-200',
-    badge: 'bg-slate-100 text-slate-600',
-    icon: <Medal size={20} className="text-slate-400" />,
-    dot: 'bg-slate-400',
+    gradient: 'linear-gradient(135deg, #FF9CE9, #FFC2BA)',
+    badgeBg: '#fff0fc',
+    badgeColor: '#FF9CE9',
+    icon: <Medal size={20} style={{ color: '#FF9CE9' }} />,
+    cardBorder: '#ffd6f8',
+    cardBg: '#fff0fc',
   },
   bronze: {
-    bg: 'bg-orange-50',
-    border: 'border-orange-200',
-    badge: 'bg-orange-100 text-orange-700',
-    icon: <Medal size={20} className="text-orange-400" />,
-    dot: 'bg-orange-400',
+    gradient: 'linear-gradient(135deg, #FFC2BA, #FF8DA1)',
+    badgeBg: '#fff7f6',
+    badgeColor: '#FFC2BA',
+    icon: <Trophy size={20} style={{ color: '#FFC2BA' }} />,
+    cardBorder: '#ffe8e5',
+    cardBg: '#fff7f6',
   },
   special: {
-    bg: 'bg-teal-50',
-    border: 'border-teal-200',
-    badge: 'bg-teal-100 text-teal-700',
-    icon: <Star size={20} className="text-teal-500" />,
-    dot: 'bg-teal-400',
+    gradient: 'linear-gradient(135deg, #AD56C4, #FF9CE9)',
+    badgeBg: '#f7eefb',
+    badgeColor: '#AD56C4',
+    icon: <Star size={20} style={{ color: '#AD56C4' }} />,
+    cardBorder: '#e8ccf3',
+    cardBg: '#f7eefb',
   },
 };
 
@@ -158,11 +162,11 @@ const Award = () => {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-amber-50 to-yellow-50 py-20">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #fff0f3 0%, #fff0fc 50%, #f7eefb 100%)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-1 w-10 bg-amber-500 rounded" />
-            <span className="text-sm font-semibold tracking-widest text-amber-600 uppercase">Recognition</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Recognition</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Awards & Honours</h1>
           <p className="text-lg text-gray-600 max-w-2xl">
@@ -171,13 +175,13 @@ const Award = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[
-              { value: goldCount, label: 'Gold Awards', color: 'text-amber-500' },
-              { value: silverCount, label: 'Silver Awards', color: 'text-slate-500' },
-              { value: bronzeCount, label: 'Bronze Awards', color: 'text-orange-500' },
-              { value: specialCount, label: 'Special Awards', color: 'text-teal-600' },
+              { value: goldCount, label: 'Gold Awards', color: '#FF8DA1' },
+              { value: silverCount, label: 'Silver Awards', color: '#FF9CE9' },
+              { value: bronzeCount, label: 'Bronze Awards', color: '#FFC2BA' },
+              { value: specialCount, label: 'Special Awards', color: '#AD56C4' },
             ].map((stat, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center border border-amber-100">
-                <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ffd6f8' }}>
+                <p className="text-2xl font-bold" style={{ color: stat.color }}>{stat.value}</p>
                 <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
               </div>
             ))}
@@ -192,8 +196,8 @@ const Award = () => {
             <div key={year} className="mb-14">
               <div className="flex items-center gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">{year}</h2>
-                <div className="flex-1 h-px bg-gray-200" />
-                <span className="text-sm text-gray-400 font-medium">
+                <div className="flex-1 h-px" style={{ background: '#ffd6f8' }} />
+                <span className="text-sm font-medium" style={{ color: '#AD56C4' }}>
                   {awards.filter(a => a.year === year).length} award{awards.filter(a => a.year === year).length > 1 ? 's' : ''}
                 </span>
               </div>
@@ -204,13 +208,14 @@ const Award = () => {
                   return (
                     <div
                       key={i}
-                      className={`${cfg.bg} border ${cfg.border} rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow`}
+                      className="rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                      style={{ background: cfg.cardBg, border: `1px solid ${cfg.cardBorder}` }}
                     >
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 mt-0.5">{cfg.icon}</div>
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2 mb-2">
-                            <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${cfg.badge}`}>
+                            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full" style={{ background: cfg.badgeBg, color: cfg.badgeColor }}>
                               {award.title}
                             </span>
                             {award.category && (

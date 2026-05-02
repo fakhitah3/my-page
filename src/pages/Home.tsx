@@ -58,12 +58,7 @@ const Home = () => {
     setStatus('sending');
     try {
       const { error } = await supabase.from('contact_messages').insert([
-        {
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
-        },
+        { name: form.name, email: form.email, subject: form.subject, message: form.message },
       ]);
       if (error) throw error;
       setStatus('success');
@@ -75,14 +70,14 @@ const Home = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-teal-50">
+      {/* Hero */}
+      <section className="min-h-screen flex items-center bg-gradient-to-br from-brand-coral-50 via-brand-pink-50 to-brand-violet-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Welcome to My
-                <span className="text-blue-700 block">Academic Hub</span>
+                <span className="block" style={{ color: '#AD56C4' }}>Academic Hub</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Explore my collection of academic presentations, research insights, and
@@ -91,14 +86,18 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   to="/slides"
-                  className="inline-flex items-center bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center text-white px-8 py-3 rounded-lg transition-opacity font-semibold text-lg shadow-lg hover:opacity-90"
+                  style={{ background: '#AD56C4' }}
                 >
                   Explore My Slides
                   <ChevronRight size={20} className="ml-2" />
                 </Link>
                 <a
                   href="#contact"
-                  className="inline-flex items-center border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-700 hover:text-white transition-colors font-semibold text-lg"
+                  className="inline-flex items-center border-2 px-8 py-3 rounded-lg transition-colors font-semibold text-lg hover:text-white"
+                  style={{ borderColor: '#FF8DA1', color: '#FF8DA1' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#FF8DA1'; (e.currentTarget as HTMLElement).style.color = 'white'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#FF8DA1'; }}
                 >
                   Get in Touch
                 </a>
@@ -112,7 +111,7 @@ const Home = () => {
                   alt="Fakhitah Ridzuan"
                   className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-teal-600 text-white p-3 rounded-full shadow-lg">
+                <div className="absolute -bottom-2 -right-2 text-white p-3 rounded-full shadow-lg" style={{ background: '#AD56C4' }}>
                   <GraduationCap size={24} />
                 </div>
               </div>
@@ -121,12 +120,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 bg-blue-700 rounded" />
-            <h2 className="text-sm font-semibold tracking-widest text-blue-700 uppercase">About Me</h2>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>About Me</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Fakhitah Ridzuan</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -138,23 +137,23 @@ const Home = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-            <div className="text-center p-6 bg-blue-50 rounded-xl">
-              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                <BookOpen className="text-blue-700" size={28} />
+            <div className="text-center p-6 rounded-xl" style={{ background: '#fff0f3' }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#ffd6dd' }}>
+                <BookOpen style={{ color: '#FF8DA1' }} size={28} />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Research Focus</h3>
               <p className="text-sm text-gray-600">AI in Education, Data Analytics, AI and IoT for Sustainability</p>
             </div>
-            <div className="text-center p-6 bg-teal-50 rounded-xl">
-              <div className="bg-teal-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Users className="text-teal-600" size={28} />
+            <div className="text-center p-6 rounded-xl" style={{ background: '#fff0fc' }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#ffd6f8' }}>
+                <Users style={{ color: '#FF9CE9' }} size={28} />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Teaching</h3>
               <p className="text-sm text-gray-600">Programming, Application Development, Data Science, Computer Evolution</p>
             </div>
-            <div className="text-center p-6 bg-amber-50 rounded-xl">
-              <div className="bg-amber-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Award className="text-amber-600" size={28} />
+            <div className="text-center p-6 rounded-xl" style={{ background: '#f7eefb' }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#e8ccf3' }}>
+                <Award style={{ color: '#AD56C4' }} size={28} />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Recognition</h3>
               <p className="text-sm text-gray-600">Royal Scholarship Award Recipient 2017</p>
@@ -163,19 +162,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Academic Qualification Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Academic Qualification */}
+      <section className="py-20" style={{ background: '#fff7f6' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 bg-blue-700 rounded" />
-            <h2 className="text-sm font-semibold tracking-widest text-blue-700 uppercase">Education</h2>
+            <div className="h-1 w-10 rounded" style={{ background: '#FFC2BA' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FFC2BA' }}>Education</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Academic Qualification</h2>
 
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-blue-700 text-white text-sm uppercase tracking-wider">
+                <tr className="text-white text-sm uppercase tracking-wider" style={{ background: '#AD56C4' }}>
                   <th className="px-6 py-4 w-24">Year</th>
                   <th className="px-6 py-4">Qualification</th>
                   <th className="px-6 py-4 hidden md:table-cell">Institution</th>
@@ -185,14 +184,15 @@ const Home = () => {
                 {qualifications.map((q, i) => (
                   <tr
                     key={i}
-                    className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50 transition-colors`}
+                    className={`border-t border-gray-100 transition-colors ${i % 2 === 0 ? 'bg-white' : ''}`}
+                    style={i % 2 !== 0 ? { background: '#fff7f6' } : {}}
+                    onMouseEnter={e => (e.currentTarget.style.background = '#f7eefb')}
+                    onMouseLeave={e => (e.currentTarget.style.background = i % 2 === 0 ? 'white' : '#fff7f6')}
                   >
-                    <td className="px-6 py-5 font-bold text-blue-700 text-lg align-top whitespace-nowrap">{q.year}</td>
+                    <td className="px-6 py-5 font-bold text-lg align-top whitespace-nowrap" style={{ color: '#AD56C4' }}>{q.year}</td>
                     <td className="px-6 py-5 align-top">
                       <p className="font-semibold text-gray-900">{q.degree}</p>
-                      {q.thesis && (
-                        <p className="text-sm text-gray-500 mt-1 italic">Thesis: "{q.thesis}"</p>
-                      )}
+                      {q.thesis && <p className="text-sm text-gray-500 mt-1 italic">Thesis: "{q.thesis}"</p>}
                       <p className="text-sm text-gray-600 mt-1 md:hidden">{q.institution}</p>
                     </td>
                     <td className="px-6 py-5 text-gray-600 hidden md:table-cell align-top">{q.institution}</td>
@@ -204,31 +204,33 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Experience */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 bg-teal-600 rounded" />
-            <h2 className="text-sm font-semibold tracking-widest text-teal-600 uppercase">Career</h2>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF9CE9' }}>Career</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Professional Experience</h2>
 
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-200 hidden sm:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px hidden sm:block" style={{ background: '#ffd6f8' }} />
             <div className="space-y-6">
               {experiences.map((exp, i) => (
                 <div key={i} className="relative sm:pl-16">
-                  <div className="hidden sm:flex absolute left-0 top-5 w-12 h-12 rounded-full items-center justify-center shadow-sm border-2 border-white z-10"
-                    style={{ background: exp.current ? '#1d4ed8' : '#f1f5f9' }}>
-                    <Briefcase size={20} className={exp.current ? 'text-white' : 'text-gray-500'} />
+                  <div
+                    className="hidden sm:flex absolute left-0 top-5 w-12 h-12 rounded-full items-center justify-center shadow-sm border-2 border-white z-10"
+                    style={{ background: exp.current ? '#AD56C4' : '#f7eefb' }}
+                  >
+                    <Briefcase size={20} style={{ color: exp.current ? 'white' : '#AD56C4' }} />
                   </div>
-
-                  <div className={`bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow ${exp.current ? 'border-blue-200' : 'border-gray-100'}`}>
+                  <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border" style={{ borderColor: exp.current ? '#e8ccf3' : '#f3f4f6' }}>
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                       <h3 className="font-bold text-gray-900 text-lg">{exp.role}</h3>
-                      <span className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap self-start ${
-                        exp.current ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
-                      }`}>
+                      <span
+                        className="text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap self-start"
+                        style={exp.current ? { background: '#e8ccf3', color: '#AD56C4' } : { background: '#f3f4f6', color: '#6b7280' }}
+                      >
                         {exp.period}
                       </span>
                     </div>
@@ -242,12 +244,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Teaching Experience Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Teaching Experience */}
+      <section className="py-20" style={{ background: '#fff0fc' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 bg-amber-500 rounded" />
-            <h2 className="text-sm font-semibold tracking-widest text-amber-600 uppercase">Teaching</h2>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF9CE9' }}>Teaching</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Teaching Experience</h2>
 
@@ -267,9 +269,12 @@ const Home = () => {
             ].map((course) => (
               <div
                 key={course.code}
-                className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-amber-200 transition-all group"
+                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all group"
+                style={{ border: '1px solid #ffd6f8' }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = '#FF9CE9')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = '#ffd6f8')}
               >
-                <span className="text-xs font-mono font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded group-hover:bg-amber-100 transition-colors">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded" style={{ color: '#AD56C4', background: '#e8ccf3' }}>
                   {course.code}
                 </span>
                 <p className="font-semibold text-gray-800 mt-3 leading-snug">{course.title}</p>
@@ -279,27 +284,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-gray-50">
+      {/* Contact Form */}
+      <section id="contact" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 bg-blue-700 rounded" />
-            <h2 className="text-sm font-semibold tracking-widest text-blue-700 uppercase">Contact</h2>
+            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Contact</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Get in Touch</h2>
-          <p className="text-gray-600 mb-10">
-            I welcome collaboration opportunities, speaking engagements, and research discussions.
-          </p>
+          <p className="text-gray-600 mb-10">I welcome collaboration opportunities, speaking engagements, and research discussions.</p>
 
           {status === 'success' ? (
-            <div className="bg-teal-50 border border-teal-200 rounded-xl p-8 text-center">
-              <CheckCircle size={48} className="text-teal-600 mx-auto mb-4" />
+            <div className="rounded-xl p-8 text-center border" style={{ background: '#fff0fc', borderColor: '#ffd6f8' }}>
+              <CheckCircle size={48} className="mx-auto mb-4" style={{ color: '#AD56C4' }} />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent</h3>
               <p className="text-gray-600 mb-6">Thank you for reaching out. I will respond within 24–48 hours.</p>
-              <button
-                onClick={() => setStatus('idle')}
-                className="text-teal-700 font-semibold hover:underline"
-              >
+              <button onClick={() => setStatus('idle')} className="font-semibold hover:underline" style={{ color: '#AD56C4' }}>
                 Send another message
               </button>
             </div>
@@ -309,23 +309,24 @@ const Home = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                   <input
-                    type="text"
-                    required
-                    value={form.name}
+                    type="text" required value={form.name}
                     onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                     placeholder="Your name"
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
+                    style={{ '--tw-ring-color': '#AD56C4' } as React.CSSProperties}
+                    onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                    onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                   <input
-                    type="email"
-                    required
-                    value={form.email}
+                    type="email" required value={form.email}
                     onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                     placeholder="you@example.com"
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
+                    onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                    onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                   />
                 </div>
               </div>
@@ -333,24 +334,24 @@ const Home = () => {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                 <input
-                  type="text"
-                  required
-                  value={form.subject}
+                  type="text" required value={form.subject}
                   onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
                   placeholder="What is this regarding?"
-                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
+                  onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                  onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
-                  required
-                  rows={5}
-                  value={form.message}
+                  required rows={5} value={form.message}
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                   placeholder="Your message..."
-                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition resize-none"
+                  onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                  onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                 />
               </div>
 
@@ -362,9 +363,9 @@ const Home = () => {
               )}
 
               <button
-                type="submit"
-                disabled={status === 'sending'}
-                className="w-full flex items-center justify-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
+                type="submit" disabled={status === 'sending'}
+                className="w-full flex items-center justify-center gap-2 text-white px-6 py-3 rounded-lg transition-opacity font-semibold disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90"
+                style={{ background: '#AD56C4' }}
               >
                 {status === 'sending' ? (
                   <>
@@ -379,14 +380,12 @@ const Home = () => {
                 )}
               </button>
 
-              <p className="text-center text-xs text-gray-400">
-                I typically respond within 24–48 hours on business days.
-              </p>
+              <p className="text-center text-xs text-gray-400">I typically respond within 24–48 hours on business days.</p>
             </form>
           )}
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm text-gray-500">
-            <a href="mailto:fakhitah.ridzuan@gmail.com" className="flex items-center gap-2 hover:text-blue-700 transition-colors">
+          <div className="mt-8 flex justify-center text-sm text-gray-500">
+            <a href="mailto:fakhitah.ridzuan@gmail.com" className="flex items-center gap-2 transition-colors" style={{ color: '#FF8DA1' }}>
               <Mail size={16} />
               fakhitah.ridzuan@gmail.com
             </a>
