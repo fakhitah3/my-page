@@ -82,16 +82,6 @@ const Header = () => {
               Hall of Fame
             </Link>
             <Link
-              to="/about"
-              className={`font-medium transition-colors ${
-                isActive('/about')
-                  ? 'text-blue-700 border-b-2 border-blue-700'
-                  : 'text-gray-700 hover:text-blue-700'
-              }`}
-            >
-              About
-            </Link>
-            <Link
               to="/contact"
               className={`font-medium transition-colors ${
                 isActive('/contact')
@@ -172,17 +162,6 @@ const Header = () => {
                 }`}
               >
                 Hall of Fame
-              </Link>
-              <Link
-                to="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 font-medium transition-colors ${
-                  isActive('/about')
-                    ? 'text-blue-700 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-700 hover:bg-gray-50'
-                }`}
-              >
-                About
               </Link>
               <Link
                 to="/contact"

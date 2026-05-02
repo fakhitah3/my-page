@@ -15,8 +15,7 @@ const Footer = () => {
             <div className="space-y-2">
               <Link to="/" className="block text-gray-300 hover:text-white transition-colors">Home</Link>
               <Link to="/slides" className="block text-gray-300 hover:text-white transition-colors">Presentations</Link>
-              <Link to="/about" className="block text-gray-300 hover:text-white transition-colors">About Me</Link>
-              <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">Contact</Link>
+<Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
 

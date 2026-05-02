@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Slides from './pages/Slides';
 import EntrepreneurialActivity from './pages/EntrepreneurialActivity';
 import HallOfFame from './pages/HallOfFame';
-import About from './pages/About';
 import Contact from './pages/Contact';
 import Research from './pages/Research';
 
@@ -22,7 +21,6 @@ function App() {
             <Route path="/slides" element={<Slides />} />
             <Route path="/entrepreneurial" element={<EntrepreneurialActivity />} />
             <Route path="/hall-of-fame" element={<HallOfFame />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

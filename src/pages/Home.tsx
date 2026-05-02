@@ -242,6 +242,43 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Teaching Experience Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-1 w-10 bg-amber-500 rounded" />
+            <h2 className="text-sm font-semibold tracking-widest text-amber-600 uppercase">Teaching</h2>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Teaching Experience</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { code: '01', title: 'Programming Fundamentals' },
+              { code: '02', title: 'Data Structure' },
+              { code: '03', title: 'Application Development' },
+              { code: '04', title: 'Fundamentals of Programming' },
+              { code: '05', title: 'Object-Oriented Programming' },
+              { code: '06', title: 'Introduction to Data Science' },
+              { code: '07', title: 'Data Mining and Applications' },
+              { code: '08', title: 'Industrial Revolution 4.0' },
+              { code: '09', title: 'Advanced Topic in Data Science' },
+              { code: '10', title: 'Evolutionary Computing' },
+              { code: '11', title: 'Scientific Visualisation' },
+            ].map((course) => (
+              <div
+                key={course.code}
+                className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-amber-200 transition-all group"
+              >
+                <span className="text-xs font-mono font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded group-hover:bg-amber-100 transition-colors">
+                  {course.code}
+                </span>
+                <p className="font-semibold text-gray-800 mt-3 leading-snug">{course.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
