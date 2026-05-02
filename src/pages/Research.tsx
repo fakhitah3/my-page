@@ -183,10 +183,6 @@ const Research = () => {
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Research Portfolio</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Research</h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            An overview of funded research projects, intellectual property, and student supervision
-            spanning data science, artificial intelligence, and applied computing.
-          </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[
