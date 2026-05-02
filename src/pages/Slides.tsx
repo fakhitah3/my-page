@@ -52,26 +52,8 @@ const Slides = () => {
           <p className="text-lg text-gray-600 max-w-2xl">
             Browse presentations and teaching materials organised by subject. Select a subject below to filter slides for that course.
           </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
-            {[
-              { value: slides.length, label: 'Total Slides' },
-              { value: new Set(slides.flatMap(s => s.topics)).size, label: 'Topics Covered' },
-              { value: teachingSubjects.length, label: 'Subjects' },
-              { value: slides.filter(s => s.topics.includes('Data Science')).length, label: 'Data Science Slides' },
-            ].map((stat, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ffd6dd' }}>
-                <p className="text-2xl font-bold" style={{ color: '#AD56C4' }}>{stat.value}</p>
-                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
-
-      {/* Subject Filter */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3">
               <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
