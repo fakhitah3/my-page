@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, BookOpen, Users, Award, GraduationCap, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { ChevronRight, BookOpen, Users, Award, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const qualifications = [
@@ -138,12 +138,9 @@ const Home = () => {
                 <img
                   src="/profile-photo.png"
                   alt="Fakhitah Ridzuan"
-                  className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
+                  className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl border-4 border-white"
                   style={{ zIndex: 1 }}
                 />
-                <div className="absolute -bottom-2 -right-2 text-white p-3 rounded-full shadow-lg" style={{ background: '#000080', zIndex: 2 }}>
-                  <GraduationCap size={24} />
-                </div>
               </div>
             </div>
           </div>
