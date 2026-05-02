@@ -59,7 +59,7 @@ const Slides = () => {
             <h3 className="text-xl md:text-2xl font-bold text-gray-900">Browse by Course</h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             <button
               onClick={() => setSelectedTopic('All')}
               className="rounded-xl p-4 text-left transition-all shadow-sm hover:shadow-md"
@@ -164,41 +164,26 @@ const Slides = () => {
               </p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredSlides.map((slide, i) => (
                 <div
                   key={slide.id}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col"
                   style={{ border: '1px solid #ffd6f8' }}
                 >
-                  <div className="flex items-start gap-4">
-                    <span
-                      className="flex-shrink-0 w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center"
-                      style={{ background: '#e8ccf3', color: '#AD56C4' }}
-                    >
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                        <h3 className="font-bold text-gray-900 text-lg leading-snug">{slide.title}</h3>
-                        <a
-                          href={slide.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-1.5 rounded-lg whitespace-nowrap transition-opacity hover:opacity-80 flex-shrink-0"
-                          style={{ background: '#AD56C4', color: 'white' }}
-                        >
-                          <FileText size={14} />
-                          View Slide
-                          <ExternalLink size={12} />
-                        </a>
-                      </div>
-                      <p className="text-sm text-gray-600 mb-3 leading-relaxed">{slide.description}</p>
-                      <div className="flex flex-wrap gap-2">
+                  <div className="p-5 flex-1 flex flex-col">
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <span
+                        className="flex-shrink-0 w-7 h-7 rounded-full font-bold text-xs flex items-center justify-center"
+                        style={{ background: '#e8ccf3', color: '#AD56C4' }}
+                      >
+                        {i + 1}
+                      </span>
+                      <div className="flex flex-wrap gap-1.5 justify-end">
                         {slide.topics.map(topic => (
                           <span
                             key={topic}
-                            className="text-xs font-medium px-2.5 py-0.5 rounded-full cursor-pointer transition-colors"
+                            className="text-xs font-medium px-2 py-0.5 rounded-full cursor-pointer transition-colors"
                             style={{ background: '#f7eefb', color: '#AD56C4' }}
                             onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#e8ccf3')}
                             onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#f7eefb')}
@@ -209,6 +194,21 @@ const Slides = () => {
                         ))}
                       </div>
                     </div>
+                    <h3 className="font-bold text-gray-900 text-base leading-snug mb-2">{slide.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1">{slide.description}</p>
+                  </div>
+                  <div className="px-5 pb-5">
+                    <a
+                      href={slide.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full gap-1.5 text-sm font-semibold px-4 py-2.5 rounded-lg transition-opacity hover:opacity-80"
+                      style={{ background: '#AD56C4', color: 'white' }}
+                    >
+                      <FileText size={14} />
+                      View Slide
+                      <ExternalLink size={12} />
+                    </a>
                   </div>
                 </div>
               ))}
