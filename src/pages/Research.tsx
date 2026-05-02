@@ -20,8 +20,8 @@ const leaderGrants = [
     title: 'AIREACH – AI and Robotics Education for Applied Community Hub',
     funder: 'Malaysia International Enrichment Matching Fund (MIEMF)',
     amount: 'RM 11,675',
-    period: '',
-    status: 'ongoing',
+    period: 'August 2025 - Dec 2025',
+    status: 'completed',
   },
   {
     title: 'Framework for Data Quality in Pre-processing for Food Production Forecasting',
@@ -44,7 +44,7 @@ const memberGrants = [
     title: 'Artificial Intelligence in Financial Investment Research Consortium (AIFIC)',
     funder: 'Konsortium Kecemerlangan Penyelidikan',
     amount: 'RM 600,000',
-    period: '',
+    period: '1 January 2026 - 31 Decemebr 2027',
     status: 'ongoing',
   },
   {
