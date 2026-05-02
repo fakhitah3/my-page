@@ -85,44 +85,79 @@ const Home = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero */}
-      <section className="min-h-screen flex items-center bg-gradient-to-br from-brand-coral-50 via-brand-pink-50 to-brand-violet-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Welcome to My
-                <span className="block" style={{ color: '#AD56C4' }}>Academic Hub</span>
+
+      {/* ── HERO / ABOUT ME ─────────────────────────────────────── */}
+      <section className="min-h-screen flex items-center" style={{ background: '#FFFAFA' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left – text */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+                <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>About Me</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2 leading-tight">
+                Fakhitah Ridzuan
               </h1>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <p className="text-lg font-medium mb-6" style={{ color: '#000080' }}>
+                Senior Lecturer · Faculty of Data Science and Computing, UMK
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                I am a Senior Lecturer at Universiti Malaysia Kelantan with a PhD in Management of
+                Information System from Universiti Sains Malaysia. My work centres on data quality,
+                big data analytics, artificial intelligence in education, and IoT-driven sustainability
+                solutions — bridging rigorous research with real-world impact.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                {[
+                  { icon: BookOpen, label: 'Research Focus', desc: 'AI, Data Quality, IoT Sustainability' },
+                  { icon: Users,    label: 'Teaching',       desc: 'Data Science, OOP, App Development' },
+                  { icon: Award,    label: 'Recognition',    desc: 'Royal Scholarship Recipient 2017' },
+                ].map(({ icon: Icon, label, desc }) => (
+                  <div key={label} className="rounded-xl p-4" style={{ background: '#ADD8E626', border: '1px solid #ADD8E6' }}>
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-2" style={{ background: '#000080' }}>
+                      <Icon size={18} className="text-white" />
+                    </div>
+                    <p className="font-semibold text-gray-900 text-sm">{label}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/slides"
-                  className="inline-flex items-center text-white px-8 py-3 rounded-lg transition-opacity font-semibold text-lg shadow-lg hover:opacity-90"
-                  style={{ background: '#AD56C4' }}
+                  className="inline-flex items-center justify-center text-white px-7 py-3 rounded-lg font-semibold transition-opacity hover:opacity-90 shadow-lg"
+                  style={{ background: '#000080' }}
                 >
                   Explore My Slides
-                  <ChevronRight size={20} className="ml-2" />
+                  <ChevronRight size={18} className="ml-2" />
                 </Link>
                 <a
                   href="#contact"
-                  className="inline-flex items-center border-2 px-8 py-3 rounded-lg transition-colors font-semibold text-lg hover:text-white"
-                  style={{ borderColor: '#FF8DA1', color: '#FF8DA1' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#FF8DA1'; (e.currentTarget as HTMLElement).style.color = 'white'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#FF8DA1'; }}
+                  className="inline-flex items-center justify-center px-7 py-3 rounded-lg font-semibold border-2 transition-colors"
+                  style={{ borderColor: '#000080', color: '#000080' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#000080'; (e.currentTarget as HTMLElement).style.color = 'white'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#000080'; }}
                 >
                   Get in Touch
                 </a>
               </div>
             </div>
 
+            {/* Right – photo */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
+                <div className="absolute inset-0 rounded-full translate-x-3 translate-y-3" style={{ background: '#ADD8E6', zIndex: 0 }} />
                 <img
                   src="/Untitled design (4).png"
                   alt="Fakhitah Ridzuan"
-                  className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+                  className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
+                  style={{ zIndex: 1 }}
                 />
-                <div className="absolute -bottom-2 -right-2 text-white p-3 rounded-full shadow-lg" style={{ background: '#AD56C4' }}>
+                <div className="absolute -bottom-2 -right-2 text-white p-3 rounded-full shadow-lg" style={{ background: '#000080', zIndex: 2 }}>
                   <GraduationCap size={24} />
                 </div>
               </div>
@@ -131,61 +166,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About */}
+      {/* ── ACADEMIC QUALIFICATION ──────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>About Me</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Fakhitah Ridzuan</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            I am a Senior Lecturer at the Faculty of Data Science and Computing, Universiti Malaysia Kelantan,
-            with a PhD in Management of Information System from Universiti Sains Malaysia. My work centres on
-            data quality, big data analytics, artificial intelligence in education, and IoT-driven sustainability
-            solutions — bridging rigorous research with practical, real-world impact for students and the broader
-            academic community.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-            <div className="text-center p-6 rounded-xl" style={{ background: '#fff0f3' }}>
-              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#ffd6dd' }}>
-                <BookOpen style={{ color: '#FF8DA1' }} size={28} />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">Research Focus</h3>
-              <p className="text-sm text-gray-600">AI in Education, Data Analytics, AI and IoT for Sustainability</p>
-            </div>
-            <div className="text-center p-6 rounded-xl" style={{ background: '#fff0fc' }}>
-              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#ffd6f8' }}>
-                <Users style={{ color: '#FF9CE9' }} size={28} />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">Teaching</h3>
-              <p className="text-sm text-gray-600">Programming, Application Development, Data Science, Computer Evolution</p>
-            </div>
-            <div className="text-center p-6 rounded-xl" style={{ background: '#f7eefb' }}>
-              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#e8ccf3' }}>
-                <Award style={{ color: '#AD56C4' }} size={28} />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">Recognition</h3>
-              <p className="text-sm text-gray-600">Royal Scholarship Award Recipient 2017</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Academic Qualification */}
-      <section className="py-20" style={{ background: '#fff7f6' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 rounded" style={{ background: '#FFC2BA' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FFC2BA' }}>Education</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Education</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Academic Qualification</h2>
 
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
             <table className="w-full text-left">
               <thead>
-                <tr className="text-white text-sm uppercase tracking-wider" style={{ background: '#AD56C4' }}>
+                <tr className="text-white text-sm uppercase tracking-wider" style={{ background: '#000080' }}>
                   <th className="px-6 py-4 w-24">Year</th>
                   <th className="px-6 py-4">Qualification</th>
                   <th className="px-6 py-4 hidden md:table-cell">Institution</th>
@@ -195,12 +188,12 @@ const Home = () => {
                 {qualifications.map((q, i) => (
                   <tr
                     key={i}
-                    className={`border-t border-gray-100 transition-colors ${i % 2 === 0 ? 'bg-white' : ''}`}
-                    style={i % 2 !== 0 ? { background: '#fff7f6' } : {}}
-                    onMouseEnter={e => (e.currentTarget.style.background = '#f7eefb')}
-                    onMouseLeave={e => (e.currentTarget.style.background = i % 2 === 0 ? 'white' : '#fff7f6')}
+                    className="border-t border-gray-100 transition-colors"
+                    style={{ background: i % 2 === 0 ? 'white' : '#FFFAFA' }}
+                    onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#ADD8E620')}
+                    onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = i % 2 === 0 ? 'white' : '#FFFAFA')}
                   >
-                    <td className="px-6 py-5 font-bold text-lg align-top whitespace-nowrap" style={{ color: '#AD56C4' }}>{q.year}</td>
+                    <td className="px-6 py-5 font-bold text-lg align-top whitespace-nowrap" style={{ color: '#000080' }}>{q.year}</td>
                     <td className="px-6 py-5 align-top">
                       <p className="font-semibold text-gray-900">{q.degree}</p>
                       {q.thesis && <p className="text-sm text-gray-500 mt-1 italic">Thesis: "{q.thesis}"</p>}
@@ -215,37 +208,43 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Experience */}
-      <section className="py-20 bg-white">
+      {/* ── PROFESSIONAL EXPERIENCE ─────────────────────────────── */}
+      <section className="py-20" style={{ background: '#FFFAFA' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF9CE9' }}>Career</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Career</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Professional Experience</h2>
 
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px hidden sm:block" style={{ background: '#ffd6f8' }} />
+            <div className="absolute left-6 top-0 bottom-0 w-px hidden sm:block" style={{ background: '#ADD8E6' }} />
             <div className="space-y-6">
               {experiences.map((exp, i) => (
                 <div key={i} className="relative sm:pl-16">
                   <div
                     className="hidden sm:flex absolute left-0 top-5 w-12 h-12 rounded-full items-center justify-center shadow-sm border-2 border-white z-10"
-                    style={{ background: exp.current ? '#AD56C4' : '#f7eefb' }}
+                    style={{ background: exp.current ? '#000080' : '#ADD8E640' }}
                   >
-                    <Briefcase size={20} style={{ color: exp.current ? 'white' : '#AD56C4' }} />
+                    <Briefcase size={20} style={{ color: exp.current ? 'white' : '#6D8196' }} />
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border" style={{ borderColor: exp.current ? '#e8ccf3' : '#f3f4f6' }}>
+                  <div
+                    className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border"
+                    style={{ borderColor: exp.current ? '#ADD8E6' : '#e5e7eb' }}
+                  >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                       <h3 className="font-bold text-gray-900 text-lg">{exp.role}</h3>
                       <span
                         className="text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap self-start"
-                        style={exp.current ? { background: '#e8ccf3', color: '#AD56C4' } : { background: '#f3f4f6', color: '#6b7280' }}
+                        style={exp.current
+                          ? { background: '#ADD8E640', color: '#000080' }
+                          : { background: '#f3f4f6', color: '#6b7280' }
+                        }
                       >
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-gray-700 font-medium">{exp.org}</p>
+                    <p className="font-medium text-gray-700">{exp.org}</p>
                     {exp.place && <p className="text-gray-500 text-sm mt-0.5">{exp.place}</p>}
                   </div>
                 </div>
@@ -255,52 +254,53 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Teaching Experience */}
-      <section className="py-20" style={{ background: '#fff0fc' }}>
+      {/* ── TEACHING EXPERIENCE ─────────────────────────────────── */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 rounded" style={{ background: '#FF9CE9' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF9CE9' }}>Teaching</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Teaching</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Teaching Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Teaching Experience</h2>
+          <p className="text-gray-500 mb-10 text-sm">Click a subject to view its slides.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {teachingSubjects.map((course) => (
+            {teachingSubjects.map(course => (
               <button
                 key={course.code}
                 onClick={() => navigate(`/slides?topic=${encodeURIComponent(course.topic)}`)}
-                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all text-left group"
-                style={{ border: '1px solid #ffd6f8' }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = '#FF9CE9')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = '#ffd6f8')}
+                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all text-left group border"
+                style={{ borderColor: '#ADD8E6' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#ADD8E620'; (e.currentTarget as HTMLElement).style.borderColor = '#6D8196'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'white'; (e.currentTarget as HTMLElement).style.borderColor = '#ADD8E6'; }}
               >
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded" style={{ color: '#AD56C4', background: '#e8ccf3' }}>
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded" style={{ color: '#000080', background: '#ADD8E640' }}>
                   {course.code}
                 </span>
                 <p className="font-semibold text-gray-800 mt-3 leading-snug">{course.title}</p>
-                <p className="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#FF9CE9' }}>View slides →</p>
+                <p className="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#6D8196' }}>View slides →</p>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact" className="py-20 bg-white">
+      {/* ── CONTACT FORM ────────────────────────────────────────── */}
+      <section id="contact" className="py-20" style={{ background: '#FFFAFA' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-1 w-10 rounded" style={{ background: '#FF8DA1' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#FF8DA1' }}>Contact</span>
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Contact</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Get in Touch</h2>
           <p className="text-gray-600 mb-10">I welcome collaboration opportunities, speaking engagements, and research discussions.</p>
 
           {status === 'success' ? (
-            <div className="rounded-xl p-8 text-center border" style={{ background: '#fff0fc', borderColor: '#ffd6f8' }}>
-              <CheckCircle size={48} className="mx-auto mb-4" style={{ color: '#AD56C4' }} />
+            <div className="rounded-xl p-8 text-center border" style={{ background: '#ADD8E620', borderColor: '#ADD8E6' }}>
+              <CheckCircle size={48} className="mx-auto mb-4" style={{ color: '#000080' }} />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent</h3>
               <p className="text-gray-600 mb-6">Thank you for reaching out. I will respond within 24–48 hours.</p>
-              <button onClick={() => setStatus('idle')} className="font-semibold hover:underline" style={{ color: '#AD56C4' }}>
+              <button onClick={() => setStatus('idle')} className="font-semibold hover:underline" style={{ color: '#000080' }}>
                 Send another message
               </button>
             </div>
@@ -314,8 +314,7 @@ const Home = () => {
                     onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                     placeholder="Your name"
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
-                    style={{ '--tw-ring-color': '#AD56C4' } as React.CSSProperties}
-                    onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                    onFocus={e => (e.target.style.borderColor = '#000080')}
                     onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                   />
                 </div>
@@ -326,7 +325,7 @@ const Home = () => {
                     onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                     placeholder="you@example.com"
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
-                    onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                    onFocus={e => (e.target.style.borderColor = '#000080')}
                     onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                   />
                 </div>
@@ -339,7 +338,7 @@ const Home = () => {
                   onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
                   placeholder="What is this regarding?"
                   className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition"
-                  onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                  onFocus={e => (e.target.style.borderColor = '#000080')}
                   onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                 />
               </div>
@@ -351,7 +350,7 @@ const Home = () => {
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                   placeholder="Your message..."
                   className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none transition resize-none"
-                  onFocus={e => (e.target.style.borderColor = '#AD56C4')}
+                  onFocus={e => (e.target.style.borderColor = '#000080')}
                   onBlur={e => (e.target.style.borderColor = '#e5e7eb')}
                 />
               </div>
@@ -366,7 +365,7 @@ const Home = () => {
               <button
                 type="submit" disabled={status === 'sending'}
                 className="w-full flex items-center justify-center gap-2 text-white px-6 py-3 rounded-lg transition-opacity font-semibold disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90"
-                style={{ background: '#AD56C4' }}
+                style={{ background: '#000080' }}
               >
                 {status === 'sending' ? (
                   <>
@@ -385,14 +384,15 @@ const Home = () => {
             </form>
           )}
 
-          <div className="mt-8 flex justify-center text-sm text-gray-500">
-            <a href="mailto:fakhitah.ridzuan@gmail.com" className="flex items-center gap-2 transition-colors" style={{ color: '#FF8DA1' }}>
+          <div className="mt-8 flex justify-center text-sm">
+            <a href="mailto:fakhitah.ridzuan@gmail.com" className="flex items-center gap-2 transition-opacity hover:opacity-70" style={{ color: '#6D8196' }}>
               <Mail size={16} />
               fakhitah.ridzuan@gmail.com
             </a>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
