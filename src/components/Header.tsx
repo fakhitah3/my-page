@@ -59,7 +59,6 @@ const Header = () => {
             {navLink('/research', 'Research')}
             {navLink('/slides', 'Slides')}
             {navLink('/entrepreneurial', 'Entrepreneurial Activity')}
-            {navLink('/hall-of-fame', 'Hall of Fame')}
             {navLink('/award', 'Award')}
             {navLink('/contact', 'Contact')}
           </div>
@@ -81,7 +80,6 @@ const Header = () => {
               {mobileLink('/research', 'Research')}
               {mobileLink('/slides', 'Slides')}
               {mobileLink('/entrepreneurial', 'Entrepreneurial Activity')}
-              {mobileLink('/hall-of-fame', 'Hall of Fame')}
               {mobileLink('/award', 'Award')}
               {mobileLink('/contact', 'Contact')}
             </div>

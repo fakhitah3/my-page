@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, BookOpen, Users, Award, GraduationCap, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
@@ -49,7 +49,22 @@ const experiences = [
   },
 ];
 
+const teachingSubjects = [
+  { code: '01', title: 'Programming Fundamentals',       topic: 'Programming Fundamentals' },
+  { code: '02', title: 'Data Structure',                 topic: 'Data Structure' },
+  { code: '03', title: 'Application Development',        topic: 'Application Development' },
+  { code: '04', title: 'Fundamentals of Programming',    topic: 'Fundamentals of Programming' },
+  { code: '05', title: 'Object-Oriented Programming',    topic: 'Object Oriented Programming' },
+  { code: '06', title: 'Introduction to Data Science',   topic: 'Data Science' },
+  { code: '07', title: 'Data Mining and Applications',   topic: 'Data Science' },
+  { code: '08', title: 'Industrial Revolution 4.0',      topic: 'Innovation' },
+  { code: '09', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
+  { code: '10', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
+  { code: '11', title: 'Scientific Visualisation',       topic: 'Data Science' },
+];
+
 const Home = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -254,22 +269,11 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Teaching Experience</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { code: '01', title: 'Programming Fundamentals' },
-              { code: '02', title: 'Data Structure' },
-              { code: '03', title: 'Application Development' },
-              { code: '04', title: 'Fundamentals of Programming' },
-              { code: '05', title: 'Object-Oriented Programming' },
-              { code: '06', title: 'Introduction to Data Science' },
-              { code: '07', title: 'Data Mining and Applications' },
-              { code: '08', title: 'Industrial Revolution 4.0' },
-              { code: '09', title: 'Advanced Topic in Data Science' },
-              { code: '10', title: 'Evolutionary Computing' },
-              { code: '11', title: 'Scientific Visualisation' },
-            ].map((course) => (
-              <div
+            {teachingSubjects.map((course) => (
+              <button
                 key={course.code}
-                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all group"
+                onClick={() => navigate(`/slides?topic=${encodeURIComponent(course.topic)}`)}
+                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all text-left group"
                 style={{ border: '1px solid #ffd6f8' }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = '#FF9CE9')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = '#ffd6f8')}
@@ -278,7 +282,8 @@ const Home = () => {
                   {course.code}
                 </span>
                 <p className="font-semibold text-gray-800 mt-3 leading-snug">{course.title}</p>
-              </div>
+                <p className="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#FF9CE9' }}>View slides →</p>
+              </button>
             ))}
           </div>
         </div>
