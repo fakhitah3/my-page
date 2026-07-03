@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, BookOpen, Users, Award, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { ChevronRight, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const qualifications = [
   {
@@ -68,17 +68,29 @@ const Home = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
+  // Initialize EmailJS with your public key
+  emailjs.init('sohTWLbEjfpmmPx6r');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
     try {
-      const { error } = await supabase.from('contact_messages').insert([
-        { name: form.name, email: form.email, subject: form.subject, message: form.message },
-      ]);
-      if (error) throw error;
+      const result = await emailjs.send(
+        'service_p17upj6',
+        'template_h10cfbt',
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }
+      );
+      console.log('Email sent successfully:', result);
       setStatus('success');
       setForm({ name: '', email: '', subject: '', message: '' });
-    } catch {
+    } catch (error: any) {
+      console.error('EmailJS error:', error);
+      console.error('Error details:', error.text, error.status);
       setStatus('error');
     }
   };
