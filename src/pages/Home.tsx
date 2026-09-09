@@ -20,6 +20,13 @@ const qualifications = [
 
 const experiences = [
   {
+    period: 'Apr 2026 – Present',
+    role: 'Head of Department',
+    org: 'Faculty of Data Science and Computing',
+    place: 'Universiti Malaysia Kelantan',
+    current: true,
+  },
+  {
     period: 'Dec 2022 – Present',
     role: 'Senior Lecturer',
     org: 'Faculty of Data Science and Computing',
@@ -310,8 +317,7 @@ const Home = () => {
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Media Coverage</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">News & Media</h2>
-          <p className="text-gray-600 mb-10">Featured articles and media coverage about my work in AI education and research.</p>
-
+        
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mediaArticles.map((article, index) => (
               <a

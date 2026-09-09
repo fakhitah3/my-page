@@ -58,7 +58,6 @@ const Slides = () => {
               { value: slides.length, label: 'Total Slides' },
               { value: new Set(slides.flatMap(s => s.topics)).size, label: 'Topics Covered' },
               { value: teachingSubjects.length, label: 'Subjects' },
-              { value: slides.filter(s => s.topics.includes('Data Science')).length, label: 'Data Science Slides' },
             ].map((stat, i) => (
               <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ADD8E6' }}>
                 <p className="text-2xl font-bold" style={{ color: '#000080' }}>{stat.value}</p>

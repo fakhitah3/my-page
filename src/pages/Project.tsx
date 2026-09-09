@@ -54,6 +54,19 @@ const techProjects = [
     light: '#ADD8E615',
     border: '#ADD8E6',
   },
+  {
+    id: 4,
+    name: 'AI-driven Food and Community Understanding System',
+    tagline: 'Addressing Food Insecurity with AI',
+    icon: BarChart3,
+    image: '/aifocus.png',
+    description:
+      'AI-powered data platform designed to address food insecurity and improve access to nutrition by providing real-time analysis for targeted policy decisions.',
+    sdgs: ['SDG 2 – Zero Hunger', 'SDG 3 – Good Health and Well-being'],
+    accent: '#6D8196',
+    light: '#6D819615',
+    border: '#6D819660',
+  },
 ];
 
 const communityPrograms = [
@@ -183,13 +196,13 @@ const Project = () => {
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Innovation</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Entrepreneurial Activity</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Project</h1>
           <p className="text-lg text-gray-600 max-w-2xl">
             Building technology ventures and empowering communities through education and outreach programs.
           </p>
           <div className="grid grid-cols-3 gap-4 mt-10 max-w-sm">
             {[
-              { value: '3', label: 'Tech Startups' },
+              { value: '4', label: 'Tech Startups' },
               { value: '10', label: 'Community Programs' },
               { value: 'AI', label: 'Powered' },
             ].map((stat, i) => (

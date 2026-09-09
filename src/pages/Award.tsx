@@ -4,7 +4,7 @@ import { Trophy, Medal, Star } from 'lucide-react';
 const awards = [
   { title: 'Silver Medal', event: 'International Teaching Enhancement and Learning Innovation 2026', category: '', project: 'A Conceptual Vision-AI Interface to Enhance Hands-On Student Learning in Dietary Assessment', year: 2026, tier: 'silver' },
   { title: 'Anugerah Perkhidmatan Cemerlang 2025', event: 'Anugerah Perkhidmatan Cemerlang 2025 UMK', category: '', project: '', year: 2026, tier: 'special' },
-  { title: 'Johan', event: 'Kupulan Inovatif dan Kreatif (KIK) Peringkat UMK', category: '', project: 'Kongsi Rezeki', year: 2026, tier: 'gold' },
+  { title: 'Johan', event: 'Kumpulan Inovatif dan Kreatif (KIK) Peringkat UMK', category: '', project: 'Kongsi Rezeki', year: 2026, tier: 'gold' },
   { title: 'Tempat Ke-3', event: 'Konvensyen Horizon Baharu Kumpulan Inovatif dan Kreatif Universiti Awam (KIK UA)', category: '', project: 'Kongsi Rezeki', year: 2026, tier: 'bronze' },
   { title: 'Outstanding Entrepreneurship Mentor', event: 'OEM Tahun 2025', category: '', project: '', year: 2026, tier: 'special' },
   { title: 'Gold Award', event: 'Academic Fiesta @ USM 2025', category: 'Innovation of Teaching & Learning Materials', project: 'V-Learn Ortho: Intelligent Augmented Reality for Enhancing Dental Education and Training', year: 2025, tier: 'gold' },
