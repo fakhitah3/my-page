@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Slides from './pages/Slides';
-import EntrepreneurialActivity from './pages/EntrepreneurialActivity';
-import Award from './pages/Award';
-import Contact from './pages/Contact';
-import Research from './pages/Research';
+import Home from './pages/Home.tsx';
+import Slides from './pages/Slides.tsx';
+import Project from './pages/Project.tsx';
+import Award from './pages/Award.tsx';
+import Contact from './pages/Contact.tsx';
+import Research from './pages/Research.tsx';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
             <Route path="/slides" element={<Slides />} />
-            <Route path="/entrepreneurial" element={<EntrepreneurialActivity />} />
+            <Route path="/entrepreneurial" element={<Project />} />
             <Route path="/award" element={<Award />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
