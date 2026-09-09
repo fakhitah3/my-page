@@ -5,7 +5,7 @@ export interface Slide {
   date: string;
   topics: string[];
   link: string;
-  type: 'google-slides' | 'pdf' | 'powerpoint';
+  type: 'google-slides' | 'pdf' | 'powerpoint' | 'canva-embed';
 }
 
 // Mock data for slides
@@ -223,6 +223,146 @@ export const slides: Slide[] = [
   date: "2024-01-20",
   topics: ["Object Oriented Programming", "Control Structure"],
   link: "https://www.canva.com/design/DAG0aZFqF0A/qkOV-Cq1xYAWmh9rPkoZhw/view?embed",
+  type: "canva-embed"
+},
+
+{
+  id: 34,
+  title: "Array",
+  description: "Introduction to arrays in programming, covering array declaration, initialization, accessing elements, and common array operations.",
+  date: "2024-01-20",
+  topics: ["Programming Fundamentals"],
+  link: "https://canva.link/nd0l9l9lti9ghm3",
+  type: "canva-embed"
+},
+
+{
+  id: 35,
+  title: "Data Type",
+  description: "Comprehensive overview of data types in programming, including primitive and complex data types, type conversion, and type safety.",
+  date: "2024-01-20",
+  topics: ["Programming Fundamentals"],
+  link: "https://canva.link/185hhbtnn75yehv",
+  type: "canva-embed"
+},
+
+{
+  id: 36,
+  title: "Intro to C++",
+  description: "Introduction to C++ programming language, covering basic syntax, structure, and fundamental programming concepts in C++.",
+  date: "2024-01-20",
+  topics: ["Programming Fundamentals"],
+  link: "https://canva.link/k3j61as0ifpqakg",
+  type: "canva-embed"
+},
+
+{
+  id: 37,
+  title: "Flowchart",
+  description: "Introduction to flowcharts as a visual representation of algorithms and processes, covering symbols, conventions, and best practices.",
+  date: "2024-01-20",
+  topics: ["Programming Fundamentals"],
+  link: "https://canva.link/v9wbt7l5gqehmxc",
+  type: "canva-embed"
+},
+
+{
+  id: 38,
+  title: "Repetition",
+  description: "Repetition structures in programming, covering loops, iteration patterns, and repetitive task execution with practical examples.",
+  date: "2024-01-20",
+  topics: ["Programming Fundamentals"],
+  link: "https://canva.link/fdnht8r5pnujuim",
+  type: "canva-embed"
+},
+
+{
+  id: 39,
+  title: "Stack",
+  description: "Introduction to stack data structure, covering LIFO principle, stack operations (push, pop, peek), and practical applications.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/r15p616ipr8w7ix",
+  type: "canva-embed"
+},
+
+{
+  id: 40,
+  title: "Queue",
+  description: "Introduction to queue data structure, covering FIFO principle, queue operations (enqueue, dequeue), and real-world applications.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/rlq5ansjyeff15m",
+  type: "canva-embed"
+},
+
+{
+  id: 41,
+  title: "Linked List",
+  description: "Comprehensive guide to linked list data structure, covering node structure, insertion, deletion, traversal, and singly/doubly linked lists.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/6yq6pdcczbfx0l9",
+  type: "canva-embed"
+},
+
+{
+  id: 42,
+  title: "Searching",
+  description: "Searching algorithms in data structures, covering linear search, binary search, and their time complexity analysis.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/xxx74tipte1mc0z",
+  type: "canva-embed"
+},
+
+{
+  id: 43,
+  title: "Sorting",
+  description: "Sorting algorithms in data structures, covering bubble sort, selection sort, insertion sort, and their performance characteristics.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/8zleli0pnpbzz9k",
+  type: "canva-embed"
+},
+
+{
+  id: 44,
+  title: "Graphs",
+  description: "Introduction to graph data structure, covering vertices, edges, graph representations, and basic graph traversal algorithms.",
+  date: "2024-01-20",
+  topics: ["Data Structure"],
+  link: "https://canva.link/rl6qqzcn307pcwy",
+  type: "canva-embed"
+},
+
+{
+  id: 45,
+  title: "Intro to Mobile App",
+  description: "Introduction to mobile application development, covering mobile platforms, development approaches, and basic concepts.",
+  date: "2024-01-20",
+  topics: ["Application Development"],
+  link: "https://canva.link/lf2mm7cr42hnq1a",
+  type: "canva-embed"
+},
+
+{
+  id: 46,
+  title: "Flutter - Data Navigation and Routing",
+  description: "Flutter navigation and routing concepts, covering data passing between screens, route management, and navigation patterns.",
+  date: "2024-01-20",
+  topics: ["Application Development"],
+  link: "https://canva.link/lgcx2nretiovif0",
+  type: "canva-embed"
+},
+
+{
+  id: 47,
+  title: "Mobile App Development Essential",
+  description: "Essential concepts and best practices in mobile app development, covering UI/UX principles, performance optimization, and deployment.",
+  date: "2024-01-20",
+  topics: ["Application Development"],
+  link: "https://canva.link/80jmh3j93ow3t22",
   type: "canva-embed"
 }
 

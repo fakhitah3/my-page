@@ -202,9 +202,8 @@ const Project = () => {
           </p>
           <div className="grid grid-cols-3 gap-4 mt-10 max-w-sm">
             {[
-              { value: '4', label: 'Tech Startups' },
+              { value: '4', label: 'Tech Project' },
               { value: '10', label: 'Community Programs' },
-              { value: 'AI', label: 'Powered' },
             ].map((stat, i) => (
               <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ADD8E6' }}>
                 <p className="text-2xl font-bold" style={{ color: '#000080' }}>{stat.value}</p>
@@ -318,59 +317,75 @@ const Project = () => {
       </section>
 
       {/* Community Programs Section */}
-      <section className="py-20" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FFFAFA 100%)' }}>
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-12">
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
             <h2 className="text-3xl font-bold text-gray-900">Community Engagement</h2>
           </div>
-          <div className="space-y-12">
-            {communityPrograms.map((program) => (
-              <div
-                key={program.id}
-                className="bg-white rounded-2xl p-8 shadow-sm"
-                style={{ border: `1px solid ${program.border}` }}
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-                    style={{ background: program.accent }}
-                  >
-                    <program.icon size={28} className="text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{program.name}</h3>
-                    <p className="text-sm font-semibold" style={{ color: '#6D8196' }}>{program.tagline}</p>
-                  </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                image: 'techlympics.jpeg',
+                title: '2026 - Techlympics Zon Timur 2.0',
+              },
+              {
+                image: 'ssm.jpg',
+                title: 'SSM Consultant',
+              },
+              {
+                image: 'teachyouai.jpg',
+                title: 'Sharing on STEM with SK Kedai Buloh 2',
+              },
+              {
+                image: 'genius2.jpeg',
+                title: 'Genius UMK Madani with SMK Machang',
+              },
+              {
+                image: 'genius.jpeg',
+                title: 'Genius UMK Madani @ SK Bukit Tiu',
+              },
+              {
+                image: 'ifuture.jpeg',
+                title: 'IFuture - Sharing Session with Youth in Kota Bharu',
+              },
+              {
+                image: 'aireach1.jpg',
+                title: 'AI Sharing Session with SMK Kubang Kerian 3',
+              },
+              {
+                image: 'aireach2.jpg',
+                title: 'AI Sharing Session with SMKA Naim Lilbanat',
+              },
+              {
+                image: 'y2y.jpg',
+                title: 'Youth-to-Youth AI Sharing Session',
+              },
+              {
+                image: 'punb.jpeg',
+                title: 'PUNB x UMK',
+              },
+              {
+                image: 'speaker.jpeg',
+                title: 'Future of AI at Maahad Sains Tok Guru',
+              },
+            ].map((prog, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                <div className="relative">
+                  <img
+                    src={`/${prog.image}`}   
+                    alt={prog.title}
+                    className="rounded-lg w-full object-cover"
+                  />
                 </div>
-
-                <p className="text-gray-600 leading-relaxed mb-4">{program.description}</p>
-
-                {program.impact && (
-                  <div className="mt-4 p-4 rounded-xl" style={{ background: program.light }}>
-                    <p className="text-sm font-semibold mb-1" style={{ color: program.accent }}>Impact:</p>
-                    <p className="text-gray-700 text-sm">{program.impact}</p>
-                  </div>
-                )}
-
-                {program.date && (
-                  <div className="mt-4 flex items-center gap-2 text-sm" style={{ color: '#6D8196' }}>
-                    <Calendar size={16} />
-                    <span>{program.date}</span>
-                  </div>
-                )}
-
-                {program.organization && (
-                  <div className="mt-2 text-sm text-gray-500">
-                    <span>{program.organization}</span>
-                  </div>
-                )}
+                <h3 className="text-lg font-semibold">{prog.title}</h3>
+                <p className="text-gray-600">{prog.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
+      
       {/* CTA */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

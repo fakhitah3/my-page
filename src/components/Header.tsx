@@ -54,7 +54,7 @@ const Header = () => {
             {navLink('/', 'Home')}
             {navLink('/research', 'Research')}
             {navLink('/slides', 'Slides')}
-            {navLink('/entrepreneurial', 'Entrepreneurial Activity')}
+            {navLink('/entrepreneurial', 'Project')}
             {navLink('/award', 'Award')}
             {navLink('/contact', 'Contact')}
           </div>

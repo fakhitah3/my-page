@@ -1,20 +1,29 @@
-import { ExternalLink, Newspaper } from 'lucide-react';
+import { ExternalLink, Newspaper, Play } from 'lucide-react';
 
 const mediaArticles = [
+  {
+    title: 'PETRONAS 50 Dreams: Bangkitkan Semula Legasi Wau Puyuh Pak Da',
+    source: 'YouTube',
+    url: 'https://youtu.be/q4gbj9mh2w4?si=KkjqZBsiT75TaWgE',
+    type: 'video',
+  },
   {
     title: 'SK Kedai Buloh 2 Perkasa Literasi AI dan STEM Melalui Teach You AI',
     source: 'Sinar Bestari',
     url: 'https://sinarbestari.sinarharian.com.my/article/650254/sekolah-kebangsaan/sk-kedai-buloh-2-perkasa-literasi-ai-dan-stem-melalui-teach-you-ai',
+    type: 'article',
   },
   {
     title: 'Penggunaan AI Dalam Pendidikan Pembelajaran Lebih Lancar Menarik - Ahli Akademik',
     source: 'Astro Awani',
     url: 'https://www.astroawani.com/berita-malaysia/penggunaan-ai-dalam-pendidikan-pembelajaran-lebih-lancar-menarik-ahli-akademik-481184',
+    type: 'article',
   },
   {
     title: '12 Harapan Negara',
     source: 'Harian Metro',
     url: 'https://www.hmetro.com.my/mutakhir/2017/05/232173/12-harapan-negara',
+    type: 'article',
   },
 ];
 
@@ -29,9 +38,7 @@ const News = () => {
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">News & Media</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Featured articles and media coverage about my work in AI education and research.
-          </p>
+          
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -55,7 +62,11 @@ const News = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full flex-shrink-0" style={{ background: '#ADD8E620' }}>
-                    <Newspaper size={22} style={{ color: '#000080' }} />
+                    {article.type === 'video' ? (
+                      <Play size={22} style={{ color: '#000080' }} />
+                    ) : (
+                      <Newspaper size={22} style={{ color: '#000080' }} />
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-blue-900 transition-colors">

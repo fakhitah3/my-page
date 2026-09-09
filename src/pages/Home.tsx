@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, Briefcase, Mail, Send, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
+import { ChevronRight, Briefcase, Mail, Send, CheckCircle, AlertCircle, ExternalLink, Play } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const qualifications = [
@@ -60,23 +60,31 @@ const teachingSubjects = [
   { code: '01', title: 'Programming Fundamentals',       topic: 'Programming Fundamentals' },
   { code: '02', title: 'Data Structure',                 topic: 'Data Structure' },
   { code: '03', title: 'Application Development',        topic: 'Application Development' },
-  { code: '04', title: 'Fundamentals of Programming',    topic: 'Fundamentals of Programming' },
-  { code: '05', title: 'Object-Oriented Programming',    topic: 'Object Oriented Programming' },
-  { code: '06', title: 'Introduction to Data Science',   topic: 'Data Science' },
-  { code: '07', title: 'Data Mining and Applications',   topic: 'Data Science' },
-  { code: '08', title: 'Industrial Revolution 4.0',      topic: 'Innovation' },
-  { code: '09', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
-  { code: '10', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
-  { code: '11', title: 'Scientific Visualisation',       topic: 'Data Science' },
+  { code: '04', title: 'Object-Oriented Programming',    topic: 'Object Oriented Programming' },
+  { code: '05', title: 'Introduction to Data Science',   topic: 'Data Science' },
+  { code: '06', title: 'Data Mining and Applications',   topic: 'Data Science' },
+  { code: '07', title: 'Industrial Revolution 4.0',      topic: 'Innovation' },
+  { code: '08', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
+  { code: '09', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
+  { code: '10', title: 'Scientific Visualisation',       topic: 'Data Science' },
 ];
 
 const mediaArticles = [
+  {
+    title: 'PETRONAS 50 Dreams: Bangkitkan Semula Legasi Wau Puyuh Pak Da',
+    source: 'YouTube',
+    url: 'https://youtu.be/q4gbj9mh2w4?si=KkjqZBsiT75TaWgE',
+    snippet: 'Dokumentari tentang usaha membangkitkan semula legasi Wau Puyuh Pak Da dalam siri PETRONAS 50 Dreams.',
+    image: 'https://img.youtube.com/vi/q4gbj9mh2w4/maxresdefault.jpg',
+    type: 'video',
+  },
   {
     title: 'SK Kedai Buloh 2 Perkasa Literasi AI dan STEM Melalui Teach You AI',
     source: 'Sinar Bestari',
     url: 'https://sinarbestari.sinarharian.com.my/article/650254/sekolah-kebangsaan/sk-kedai-buloh-2-perkasa-literasi-ai-dan-stem-melalui-teach-you-ai',
     snippet: 'Program Teach You AI membantu pelajar memahami konsep kecerdasan buatan dan STEM melalui pendekatan interaktif.',
     image: 'https://www.sinarharian.com.my/sinarbestari/uploads/images/2026/08/27/3627840.jpg',
+    type: 'article',
   },
   {
     title: 'Penggunaan AI Dalam Pendidikan Pembelajaran Lebih Lancar Menarik - Ahli Akademik',
@@ -84,6 +92,7 @@ const mediaArticles = [
     url: 'https://www.astroawani.com/berita-malaysia/penggunaan-ai-dalam-pendidikan-pembelajaran-lebih-lancar-menarik-ahli-akademik-481184',
     snippet: 'Integrasi AI dalam pendidikan dapat menjadikan proses pembelajaran lebih lancar dan menarik bagi pelajar.',
     image: 'https://media.astroawani.com/awani/media/article/2024/Jul/29/51716786489_TBAIjpg.jpg',
+    type: 'article',
   },
   {
     title: '12 Harapan Negara',
@@ -91,6 +100,7 @@ const mediaArticles = [
     url: 'https://www.hmetro.com.my/mutakhir/2017/05/232173/12-harapan-negara',
     snippet: 'Harapan untuk masa depan negara yang lebih baik melalui inovasi dan pembangunan mampan.',
     image: 'https://assets.hmetro.com.my/assets/logo-hm-ogimage.png',
+    type: 'article',
   },
 ];
 
@@ -334,7 +344,7 @@ const Home = () => {
                   (e.currentTarget as HTMLElement).style.borderColor = '#ADD8E6'; 
                 }}
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -344,6 +354,13 @@ const Home = () => {
                       (e.currentTarget.parentElement as HTMLElement).innerHTML = `<div class="h-full flex items-center justify-center" style="background: #ADD8E620"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#000080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></div>`;
                     }}
                   />
+                  {article.type === 'video' && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <div className="bg-white/90 rounded-full p-4">
+                        <Play size={32} className="text-blue-900" fill="#000080" />
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -358,7 +375,7 @@ const Home = () => {
                     {article.snippet}
                   </p>
                   <div className="flex items-center gap-2 text-sm font-medium" style={{ color: '#000080' }}>
-                    Read Article
+                    {article.type === 'video' ? 'Watch Video' : 'Read Article'}
                     <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
