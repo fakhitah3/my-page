@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, Briefcase, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { ChevronRight, Briefcase, Mail, Send, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const qualifications = [
@@ -61,6 +61,30 @@ const teachingSubjects = [
   { code: '09', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
   { code: '10', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
   { code: '11', title: 'Scientific Visualisation',       topic: 'Data Science' },
+];
+
+const mediaArticles = [
+  {
+    title: 'SK Kedai Buloh 2 Perkasa Literasi AI dan STEM Melalui Teach You AI',
+    source: 'Sinar Bestari',
+    url: 'https://sinarbestari.sinarharian.com.my/article/650254/sekolah-kebangsaan/sk-kedai-buloh-2-perkasa-literasi-ai-dan-stem-melalui-teach-you-ai',
+    snippet: 'Program Teach You AI membantu pelajar memahami konsep kecerdasan buatan dan STEM melalui pendekatan interaktif.',
+    image: 'https://www.sinarharian.com.my/sinarbestari/uploads/images/2026/08/27/3627840.jpg',
+  },
+  {
+    title: 'Penggunaan AI Dalam Pendidikan Pembelajaran Lebih Lancar Menarik - Ahli Akademik',
+    source: 'Astro Awani',
+    url: 'https://www.astroawani.com/berita-malaysia/penggunaan-ai-dalam-pendidikan-pembelajaran-lebih-lancar-menarik-ahli-akademik-481184',
+    snippet: 'Integrasi AI dalam pendidikan dapat menjadikan proses pembelajaran lebih lancar dan menarik bagi pelajar.',
+    image: 'https://media.astroawani.com/awani/media/article/2024/Jul/29/51716786489_TBAIjpg.jpg',
+  },
+  {
+    title: '12 Harapan Negara',
+    source: 'Harian Metro',
+    url: 'https://www.hmetro.com.my/mutakhir/2017/05/232173/12-harapan-negara',
+    snippet: 'Harapan untuk masa depan negara yang lebih baik melalui inovasi dan pembangunan mampan.',
+    image: 'https://assets.hmetro.com.my/assets/logo-hm-ogimage.png',
+  },
 ];
 
 const Home = () => {
@@ -278,8 +302,68 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ── NEWS & MEDIA ───────────────────────────────────────── */}
+      <section className="py-20" style={{ background: '#FFFAFA' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Media Coverage</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">News & Media</h2>
+          <p className="text-gray-600 mb-10">Featured articles and media coverage about my work in AI education and research.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {mediaArticles.map((article, index) => (
+              <a
+                key={index}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border group"
+                style={{ borderColor: '#ADD8E6' }}
+                onMouseEnter={e => { 
+                  (e.currentTarget as HTMLElement).style.borderColor = '#6D8196'; 
+                }}
+                onMouseLeave={e => { 
+                  (e.currentTarget as HTMLElement).style.borderColor = '#ADD8E6'; 
+                }}
+              >
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      (e.currentTarget.parentElement as HTMLElement).innerHTML = `<div class="h-full flex items-center justify-center" style="background: #ADD8E620"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#000080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></div>`;
+                    }}
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold px-2 py-1 rounded" style={{ background: '#ADD8E640', color: '#000080' }}>
+                      {article.source}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-3 line-clamp-2 group-hover:text-blue-900 transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                    {article.snippet}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm font-medium" style={{ color: '#000080' }}>
+                    Read Article
+                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CONTACT FORM ────────────────────────────────────────── */}
-      <section id="contact" className="py-20" style={{ background: '#FFFAFA' }}>
+      <section id="contact" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />

@@ -2,9 +2,14 @@ import React from 'react';
 import { Trophy, Medal, Star } from 'lucide-react';
 
 const awards = [
+  { title: 'Silver Medal', event: 'International Teaching Enhancement and Learning Innovation 2026', category: '', project: 'A Conceptual Vision-AI Interface to Enhance Hands-On Student Learning in Dietary Assessment', year: 2026, tier: 'silver' },
+  { title: 'Anugerah Perkhidmatan Cemerlang 2025', event: 'Anugerah Perkhidmatan Cemerlang 2025 UMK', category: '', project: '', year: 2026, tier: 'special' },
+  { title: 'Johan', event: 'Kupulan Inovatif dan Kreatif (KIK) Peringkat UMK', category: '', project: 'Kongsi Rezeki', year: 2026, tier: 'gold' },
+  { title: 'Tempat Ke-3', event: 'Konvensyen Horizon Baharu Kumpulan Inovatif dan Kreatif Universiti Awam (KIK UA)', category: '', project: 'Kongsi Rezeki', year: 2026, tier: 'bronze' },
+  { title: 'Outstanding Entrepreneurship Mentor', event: 'OEM Tahun 2025', category: '', project: '', year: 2026, tier: 'special' },
   { title: 'Gold Award', event: 'Academic Fiesta @ USM 2025', category: 'Innovation of Teaching & Learning Materials', project: 'V-Learn Ortho: Intelligent Augmented Reality for Enhancing Dental Education and Training', year: 2025, tier: 'gold' },
   { title: 'Gold Award', event: 'International Teaching Enhancement & Learning Innovation Carnival 2025', category: '', project: 'Lexitune: From Hanzi to Hiragana', year: 2025, tier: 'gold' },
-  { title: 'Top 10 Prestasi Cemerlang LNPT 2024', event: 'Anugerah Perkhidmatan Cemerlang 2024 UMK', category: '', project: '', year: 2024, tier: 'special' },
+  { title: 'Top 10 Prestasi Cemerlang LNPT 2024', event: 'Anugerah Perkhidmatan Cemerlang 2024 UMK', category: '', project: '', year: 2025, tier: 'special' },
   { title: 'Anugerah Nadi Keusahawanan', event: 'UMK Entrepreneurship Awards 2024', category: '', project: '', year: 2024, tier: 'special' },
   { title: '3rd Place', event: 'Anugerah Perdana Belia Negara Peringkat Negeri Kelantan 2025', category: "Women's Individual Category", project: '', year: 2025, tier: 'bronze' },
   { title: 'Gold Medal', event: 'EKSPO REKACIPTA UniMAP 2025 (EREKA 2025)', category: '', project: 'AIFocus: AI-Driven Food and Community Understanding System', year: 2025, tier: 'gold' },

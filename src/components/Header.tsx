@@ -72,7 +72,7 @@ const Header = () => {
               {mobileLink('/', 'Home')}
               {mobileLink('/research', 'Research')}
               {mobileLink('/slides', 'Slides')}
-              {mobileLink('/entrepreneurial', 'Entrepreneurial Activity')}
+              {mobileLink('/entrepreneurial', 'Projects')}
               {mobileLink('/award', 'Award')}
               {mobileLink('/contact', 'Contact')}
             </div>

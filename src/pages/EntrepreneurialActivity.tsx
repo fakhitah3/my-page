@@ -53,7 +53,7 @@ const EntrepreneurialActivity = () => {
             <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Innovation</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Entrepreneurial Activity</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Projects</h1>
           <p className="text-lg text-gray-600 max-w-2xl">
             Building technology ventures at the intersection of sustainability, data science, and artificial intelligence.
           </p>
