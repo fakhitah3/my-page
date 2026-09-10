@@ -319,6 +319,96 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ── PROFESSIONAL SOCIETIES ─────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-1 w-10 rounded" style={{ background: '#ADD8E6' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#6D8196' }}>Professional Development</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Professional Societies & Certifications</h2>
+          <p className="text-gray-600 mb-10">Active involvement in professional societies and technical certifications.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                image: 'paksi.jpeg',
+                title: 'Persatuan Kemajuan STEM dan Inovasi Kelantan',
+                description: 'Member of the STEM and Innovation Advancement Association of Kelantan'
+              },
+              {
+                image: 'pcu.jpeg',
+                title: 'Persatuan Cendekiawan Ulung',
+                description: 'Secretary of the Outstanding Scholars Association'
+              },
+              {
+                image: 'mbot.jpg',
+                title: 'Professional Technologist MBOT',
+                description: 'Professional Technologist certification from Malaysian Board of Technologists'
+              },
+              {
+                image: 'atlas.jpeg',
+                title: 'ATLAS.ti Certified Junior Trainer',
+                description: 'Certified Junior Trainer for ATLAS.ti qualitative data analysis software'
+              },
+              {
+                image: 'mendeley.webp',
+                title: 'Mendeley Advisor',
+                description: 'Mendeley Advisor certification for reference management and academic writing'
+              },
+              {
+                image: 'iaeng.jpg',
+                title: 'International Association of Engineers',
+                description: 'Member of the International Association of Engineers (IAENG)'
+              },
+              {
+                image: 'ireb.png',
+                title: 'International Requirements Engineering Board',
+                description: 'Certified Professional for Requirements Engineering (Foundation Level)'
+              },
+              {
+                image: 'microsoft.avif',
+                title: 'Microsoft Certified: Azure AI Fundamentals',
+                description: 'Microsoft certification in Azure Artificial Intelligence fundamentals'
+              },
+              {
+                image: 'microsoft.avif',
+                title: 'Microsoft Certified: Azure Data Fundamentals',
+                description: 'Microsoft certification in Azure Data fundamentals'
+              }
+            ].map((cert, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border group"
+                style={{ borderColor: '#ADD8E6' }}
+                onMouseEnter={e => { 
+                  (e.currentTarget as HTMLElement).style.borderColor = '#6D8196'; 
+                }}
+                onMouseLeave={e => { 
+                  (e.currentTarget as HTMLElement).style.borderColor = '#ADD8E6'; 
+                }}
+              >
+                <div className="h-32 overflow-hidden bg-gray-50 flex items-center justify-center">
+                  <img
+                    src={`/${cert.image}`}
+                    alt={cert.title}
+                    className="max-h-full max-w-full object-contain p-4"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-2 group-hover:text-blue-900 transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 line-clamp-2">
+                    {cert.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── NEWS & MEDIA ───────────────────────────────────────── */}
       <section className="py-20" style={{ background: '#FFFAFA' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

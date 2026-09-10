@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Droplets, BarChart3, CheckCircle, Users, GraduationCap, Award, Calendar, Mic, Cpu, X } from 'lucide-react';
+import { Droplets, BarChart3, CheckCircle, Cpu, X, Stethoscope, Heart } from 'lucide-react';
 
 const techProjects = [
   {
@@ -67,120 +67,53 @@ const techProjects = [
     light: '#6D819615',
     border: '#6D819660',
   },
-];
-
-const communityPrograms = [
   {
-    id: 1,
-    name: 'FSDK@School',
-    tagline: 'Youth Empowerment Through Programming',
-    icon: GraduationCap,
-    description: 'Program FSDK@School membuka peluang kepada belia untuk berkongsi ilmu pengaturcaraan dengan pelajar sekolah, sekaligus memupuk kemahiran komunikasi dan keyakinan diri mereka. Inisiatif ini bukan sahaja memperkasa belia dengan pengalaman mengajar, tetapi juga menggalakkan minat generasi muda dalam bidang teknologi dan inovasi.',
-    impact: 'Meningkatkan literasi digital dalam kalangan belia, membangunkan kemahiran teknikal yang relevan dengan industri, serta memberi inspirasi kepada peserta untuk meneroka peluang dalam bidang teknologi dan inovasi.',
+    id: 5,
+    name: 'VLearn-Ortho',
+    tagline: 'Intelligent Orthodontic Education Platform',
+    icon: Stethoscope,
+    image: '/vlearn.png',
+    description:
+      'VLearn-Ortho (or V-LeARn Ortho) is an intelligent orthodontic education platform designed to enhance clinical examination and diagnostic training for dental students.',
+    highlights: [
+      'Combines 3D Augmented Reality (AR) rendering, haptic feedback, and deep learning',
+      'Features marker-less facial recognition and deep learning models for soft-tissue landmark identification and assessment'
+    ],
     accent: '#000080',
     light: '#ADD8E620',
     border: '#ADD8E6',
   },
   {
-    id: 2,
-    name: 'Sharing Session @JPN Kelantan',
-    tagline: 'POPS Negeri Kelantan 2024',
-    icon: Users,
-    description: 'Program Outreach Pendidikan Swasta (POPS) Negeri Kelantan 2024. Dalam program ini, saya berpeluang berkongsi pengetahuan berkaitan pengaturcaraan dengan peserta, yang majoritinya terdiri daripada belia. Sesi ini memberi pendedahan kepada konsep asas pengaturcaraan serta aplikasi praktikal dalam dunia digital.',
-    impact: 'Meningkatkan literasi digital dalam kalangan belia, membangunkan kemahiran teknikal yang relevan dengan industri, serta memberi inspirasi kepada peserta untuk meneroka peluang dalam bidang teknologi dan inovasi.',
-    accent: '#6D8196',
-    light: '#6D819615',
-    border: '#6D819660',
-  },
-  {
-    id: 3,
-    name: 'Youth2Youth @SMK Sultan Ismail',
-    tagline: 'Jamboree STEM 2024',
-    icon: Users,
-    description: 'Saya berpeluang mengendalikan sesi perkongsian sempena Jamboree STEM 2024 di SMK Sultan Ismail, di mana saya berkongsi berkenaan pembangunan aplikasi kepada peserta yang terdiri daripada belia. Sesi ini memberi pendedahan kepada konsep asas pembangunan aplikasi, termasuk reka bentuk antara muka pengguna (UI/UX) dan asas pengaturcaraan.',
-    impact: 'Meningkatkan minat belia terhadap bidang teknologi, membina kemahiran asas pembangunan aplikasi, serta menggalakkan inovasi dan kreativiti dalam kalangan generasi muda.',
-    accent: '#000080',
-    light: '#ADD8E615',
-    border: '#ADD8E6',
-  },
-  {
-    id: 4,
-    name: 'Code@School',
-    tagline: 'IoT & Mobile App Development',
-    icon: Calendar,
-    description: 'Program ini berjalan sepanjang November 2023 sehingga Januari 2024. Program ini merupakan sebuah aktiviti pemindahan maklumat oleh belia di UMK kepada belia SMK Sultan Ismail. Peserta diberikan pendedahan mengenai Internet of Things (IoT) dan pembangunan aplikasi mudah alih, di mana peserta perlu mengenal pasti permasalahan di sekitar sekolah dan merangka inovasi sebagai penyelesaian.',
-    impact: 'Meningkatkan kemahiran teknologi belia, memupuk pemikiran kritis dalam penyelesaian masalah, serta menggalakkan minat terhadap STEM melalui pembelajaran interaktif.',
-    accent: '#6D8196',
-    light: '#6D819615',
-    border: '#6D819660',
-  },
-  {
-    id: 5,
-    name: 'Youth2Youth @UMK',
-    tagline: 'Block-Based Programming',
-    icon: GraduationCap,
-    description: 'Program ini bertujuan untuk memperkenalkan konsep asas pengaturcaraan berasaskan blok kepada belia di sekitar Kelantan. Peserta diberikan pendedahan kepada penggunaan blok-blok visual yang mudah difahami untuk membangunkan logik dan struktur pengaturcaraan. Program ini merupakan inisiatif perkongsian ilmu di FSDK, UMK.',
-    impact: 'Membantu belia membangunkan pemikiran logik dan kemahiran penyelesaian masalah, serta memberi pendedahan awal kepada dunia pengaturcaraan dan teknologi sebagai persediaan ke arah industri digital.',
-    accent: '#000080',
-    light: '#ADD8E615',
-    border: '#ADD8E6',
-  },
-  {
     id: 6,
-    name: 'Juri Techlympics Zon Timur 2.0 2026',
-    tagline: 'Jom Masuk U Zon Timur 2024',
-    icon: Award,
-    description: 'Dalam program ini, saya telah mengumpulkan beberapa orang belia dari FSDK untuk bersama-sama menjalankan aktiviti berkaitan Kecerdasan Buatan (AI) bagi memberi pendedahan kepada pelajar dan pengunjung tentang teknologi masa hadapan. Sepanjang program, peserta didedahkan kepada konsep asas AI, aplikasi dalam kehidupan seharian, serta demonstrasi interaktif.',
-    impact: 'Meningkatkan kesedaran dan minat terhadap AI dalam kalangan pelajar, memperkukuh kemahiran komunikasi serta kepimpinan sukarelawan, dan mempromosikan STEM sebagai bidang pilihan untuk pendidikan tinggi.',
+    name: 'Vision-AI',
+    tagline: 'Digital Health Interface',
+    icon: BarChart3,
+    image: '/visionai.png',
+    description:
+      'Vision-AI is a digital health interface designed to automate dietary tracking, food identification, and personalized calorie estimation for health and nutrition education.',
+    highlights: [
+      'Automates dietary tracking through AI-powered food identification',
+      'Provides personalized calorie estimation for health and nutrition education'
+    ],
     accent: '#6D8196',
     light: '#6D819615',
     border: '#6D819660',
   },
   {
     id: 7,
-    name: 'Penceramah Jemputan KWAP',
-    tagline: 'Design Thinking Workshop',
-    icon: Mic,
-    description: 'Program ini bertujuan untuk memberikan pendedahan kepada staf KWAP mengenai konsep Design Thinking, kaedah penyelesaian masalah yang berfokus kepada pengguna melalui pendekatan kreatif dan inovatif.',
-    date: '22 Oktober 2024',
-    organization: 'Kumpulan Wang Persaraan (Diperbadankan) (KWAP)',
+    name: 'Kongsi Rezeki',
+    tagline: 'Digital Campus Food Bank',
+    icon: Heart,
+    image: '/kongsirezeki.png',
+    description:
+      'Kongsi Rezeki is a digital campus food bank web application developed by Kumpulan Food Angel under the Office of the Deputy Vice-Chancellor for Student Affairs and Alumni (TNC HEPA) at Universiti Malaysia Kelantan (UMK).',
+    highlights: [
+      'Developed using a Design Thinking methodology',
+      'Addresses food security issues among university students, particularly those from B40 and underprivileged backgrounds facing financial hardship'
+    ],
     accent: '#000080',
-    light: '#ADD8E615',
+    light: '#ADD8E620',
     border: '#ADD8E6',
-  },
-  {
-    id: 8,
-    name: 'Penceramah Jemputan IKMA',
-    tagline: 'AI for Cooperatives',
-    icon: Mic,
-    description: 'Program perkongsian ini bertujuan untuk memberikan pendedahan kepada anggota koperasi mengenai kepentingan dan aplikasi Kecerdasan Buatan (AI) dalam meningkatkan kecekapan operasi perniagaan. Dalam sesi ini, peserta diperkenalkan kepada konsep asas AI, penggunaan data untuk membuat keputusan, serta bagaimana AI dapat membantu koperasi dalam pengurusan sumber, pemasaran, dan perkhidmatan pelanggan.',
-    date: '10 Julai 2024',
-    organization: 'Institut Koperasi Malaysia (IKMa) Zon Timur',
-    accent: '#6D8196',
-    light: '#6D819615',
-    border: '#6D819660',
-  },
-  {
-    id: 9,
-    name: 'Karnival Minggu Sains Negara Peringkat Negeri Kelantan',
-    tagline: 'AI & Industry 4.0/5.0 Awareness',
-    icon: Calendar,
-    description: 'Sesi perkongsian ini merupakan sebahagian daripada inisiatif Minggu Sains Negara yang bertujuan untuk meningkatkan kesedaran masyarakat, khususnya belia, mengenai perkembangan Kecerdasan Buatan (AI) dan Revolusi Industri 4.0 & 5.0.',
-    date: 'Ogos 2024',
-    organization: 'Bahagian Pengurusan Teknologi Maklumat Pejabat Setiausaha Kerajaan Negeri Kelantan dan Kelantan ICT Gateway Sdn. Bhd.',
-    accent: '#000080',
-    light: '#ADD8E615',
-    border: '#ADD8E6',
-  },
-  {
-    id: 10,
-    name: 'Panel Interview Biasiswa Yang Dipertuan Agong',
-    tagline: 'BYDPA Selection Panel',
-    icon: Award,
-    description: 'Dilantik sebagai panel temuduga bagi Biasiswa Yang di-Pertuan Agong (BYDPA). BYDPA adalah program biasiswa berprestij yang ditawarkan oleh Jabatan Perkhidmatan Awam Malaysia kepada individu yang terpilih.',
-    accent: '#6D8196',
-    light: '#6D819615',
-    border: '#6D819660',
   },
 ];
 
@@ -202,7 +135,7 @@ const Project = () => {
           </p>
           <div className="grid grid-cols-3 gap-4 mt-10 max-w-sm">
             {[
-              { value: '4', label: 'Tech Project' },
+              { value: '7', label: 'Tech Project' },
               { value: '10', label: 'Community Programs' },
             ].map((stat, i) => (
               <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center" style={{ border: '1px solid #ADD8E6' }}>
@@ -379,7 +312,6 @@ const Project = () => {
                   />
                 </div>
                 <h3 className="text-lg font-semibold">{prog.title}</h3>
-                <p className="text-gray-600">{prog.text}</p>
               </div>
             ))}
           </div>

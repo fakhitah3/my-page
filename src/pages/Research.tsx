@@ -75,6 +75,9 @@ const copyrights = [
   { ref: 'CRLY2023C03251', title: 'Wasteless: Food Waste Management System' },
   { ref: 'CRLY2021P03024', title: 'Veracity Assessment Framework for Big Data Analytics' },
   { ref: 'CRLY2025C09032', title: 'Well (Wellness Enhanced Lifelong Learning) Nexus Educational Framework' },
+  { ref: 'CRLY2026E02615', title: 'Ecowatch - Intelligent Water Quality Monitoring System' },
+  { ref: 'CRLY2026E02618', title: 'Carbonlens - Framework for ESG Tracking' },
+  { ref: 'CRLY2026E02259', title: 'Kongsi Rezeki: Inovasi Digital Food Bank Siswa' },
 ];
 
 const patents = [

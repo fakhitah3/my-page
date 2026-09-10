@@ -106,6 +106,20 @@ const About = () => {
           </div>
 
           {/* Current Position and Experience */}
+          <div>
+            <div className="bg-blue-50 p-8 rounded-xl">
+              <div className="flex items-center mb-6">
+                 <div className="text-3xl mb-3">🎖</div>
+                <h3 className="text-2xl font-bold text-gray-900">Current Position</h3>
+              </div>
+              <div className="space-y-2">
+                <p className="font-bold text-gray-900 text-xl mb-2">Head of Department</p>
+                <a href="https://www.uam.edu.my/faculty/computing-and-data-science/" className="text-blue-700 font-semibold text-lg" target="_blank" rel="noopener noreferrer">Faculty of Data Science and Computing</a>
+                <p className="text-blue-600">Universiti Malaysia Kelantan</p>
+                <p className="text-gray-600 mt-2">Apr 2026 - current</p>
+              </div>
+            </div>
+          </div>
           <div className="space-y-8">
             <div className="bg-blue-50 p-8 rounded-xl">
               <div className="flex items-center mb-6">

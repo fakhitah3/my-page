@@ -7,14 +7,13 @@ const teachingSubjects = [
   { code: '01', title: 'Programming Fundamentals',       topic: 'Programming Fundamentals' },
   { code: '02', title: 'Data Structure',                 topic: 'Data Structure' },
   { code: '03', title: 'Application Development',        topic: 'Application Development' },
-  { code: '04', title: 'Fundamentals of Programming',    topic: 'Fundamentals of Programming' },
-  { code: '05', title: 'Object-Oriented Programming',    topic: 'Object Oriented Programming' },
-  { code: '06', title: 'Introduction to Data Science',   topic: 'Data Science' },
-  { code: '07', title: 'Data Mining and Applications',   topic: 'Data Science' },
-  { code: '08', title: 'Industrial Revolution 4.0',      topic: 'Innovation' },
-  { code: '09', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
-  { code: '10', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
-  { code: '11', title: 'Scientific Visualisation',       topic: 'Data Science' },
+  { code: '04', title: 'Object-Oriented Programming',    topic: 'Object Oriented Programming' },
+  { code: '05', title: 'Introduction to Data Science',   topic: 'Data Science' },
+  { code: '06', title: 'Data Mining and Applications',   topic: 'Data Science' },
+  { code: '07', title: 'Industrial Revolution 4.0',      topic: 'Innovation' },
+  { code: '08', title: 'Advanced Topic in Data Science', topic: 'Data Science' },
+  { code: '09', title: 'Evolutionary Computing',         topic: 'Computer Evolution' },
+  { code: '10', title: 'Scientific Visualisation',       topic: 'Data Science' },
 ];
 
 const Slides = () => {
